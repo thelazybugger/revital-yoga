@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Revital Yoga and Healing Centre</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Tailwind Theme Configuration -->
+   
+                       
+</head>
+
+<body
+    class="bg-sand-50 text-slate-800  antialiased selection:bg-sage-200 selection:text-sage-900 min-h-screen flex flex-col justify-between">
+
+    <!-- Header Block -->
+    <nav class="sticky top-0 z-50 flex w-full items-center justify-between px-4 py-3.5 backdrop-blur-md md:px-16  lg:px-24 "
+        x-data="{ mobileMenuOpen: false }">
+        <a href="/">
+            <img src="logo.png" alt="logo" class="item-center h-9 w-auto" width="205" height="80" />
+        </a>
+    
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="cources.html" class="text-black hover:text-black font-medium transition-colors">Classes</a>
+            <a href="about.html" class="text-black hover:text-black font-medium transition-colors">About Us</a>
+            <a href="contactus.html" class="text-black hover:text-black font-medium transition-colors">Contact</a>
+    
+        </div>
+    
+    
+    
+    </nav>
+    
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+    
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    
+    <section id="home" class="relative overflow-hidden"></section>
+
+    <!-- Main Content Area -->
+    <main class="py-12 md:py-20 flex-grow">
+        <div class="max-w-6xl mx-auto px-6">
+
+          
+            
+            <!-- Prebuilt UI Style Overview Callout Box -->
+            <div
+                class="mb-10 bg-white rounded-2xl p-6 md:p-8 border border-violet-600 shadow-sm relative overflow-hidden">
+                <div class="flex items-start gap-4">
+                    
+                    <div>
+                        <h2 class="font-serif text-xl font-medium text-slate-900 mb-2">Our Story & Purpose</h2>
+                        <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                            Welcome to Revital Yoga and Healing Centre. Founded with a vision to create a tranquil
+                            sanctuary amidst the pace of modern life, our centre brings together traditional yoga
+                            practices, ancient healing wisdom, and modern wellness approaches to guide you toward
+                            holistic well-being and inner balance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two-Column Side-by-Side Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Left Column Section: Core Pillars -->
+                <section
+                    class="bg-white/70 rounded-2xl p-6 md:p-8 border border-violet-600 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-sage-100 flex items-center justify-center text-sage-800 font-semibold text-sm">
+                                01
+                            </div>
+                            <h2 class="font-serif text-2xl text-slate-900">Core Pillars of Our Practice</h2>
+                        </div>
+                        <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-6">
+                            We believe true wellness is a multifaceted journey. Our integrative approach focuses on four
+                            foundational aspects of personal health:
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700">
+                            <div class="flex items-center gap-2.5 bg-sand-50/60 p-3 rounded-lg border border-sand-100">
+                                Mindful Movement
+                            </div>
+                            <div class="flex items-center gap-2.5 bg-sand-50/60 p-3 rounded-lg border border-sand-100">
+                                Pranayama & Breath
+                            </div>
+                            <div class="flex items-center gap-2.5 bg-sand-50/60 p-3 rounded-lg border border-sand-100">
+                                Deep Meditation
+                            </div>
+                            <div class="flex items-center gap-2.5 bg-sand-50/60 p-3 rounded-lg border border-sand-100">
+                                Holistic Healing
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Right Column Section: Why Practice With Us -->
+                <section
+                    class="bg-white/70 rounded-2xl p-6 md:p-8 border border-violet-600 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-sage-100 flex items-center justify-center text-sage-800 font-semibold text-sm">
+                                02
+                            </div>
+                            <h2 class="font-serif text-2xl text-slate-900">Why Practice With Us</h2>
+                        </div>
+                        <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
+                            Whether you are beginning your wellness journey or deepening an established practice, our
+                            space supports you:
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-sage-600 mt-0.5 shrink-0"></i>
+                                <span>Experienced, certified instructors in classical and modern styles.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-sage-600 mt-0.5 shrink-0"></i>
+                                <span>Tailored modifications for every experience level and body type.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-sage-600 mt-0.5 shrink-0"></i>
+                                <span>A non-judgmental community centered around mutual growth.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-sage-600 mt-0.5 shrink-0"></i>
+                                <span>Serene environment crafted to promote deep rejuvenation.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Full Width Section Below: Offerings -->
+            <section class="mt-6 bg-white/70 rounded-2xl p-6 md:p-8 border border-violet-600">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-sage-100 flex items-center justify-center text-sage-800 font-semibold text-sm">
+                        03
+                    </div>
+                    <h2 class="font-serif text-2xl text-slate-900">Our Offerings & Atmosphere</h2>
+                </div>
+                <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
+                    We host a diverse range of sessions structured to meet various physical and energetic needs:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-4 bg-sand-50/60 rounded-xl border border-sand-100">
+                        <span class="font-semibold text-slate-800 text-sm block mb-1">Daily Classes & Workshops:</span>
+                        <p class="text-slate-600 text-xs md:text-sm">Restorative flows and invigorating sessions
+                            tailored for beginner through advanced practitioners.</p>
+                    </div>
+                    <div class="p-4 bg-sand-50/60 rounded-xl border border-sand-100">
+                        <span class="font-semibold text-slate-800 text-sm block mb-1">Therapeutic Healing & Sound
+                            Baths:</span>
+                        <p class="text-slate-600 text-xs md:text-sm">Specialized individual or group healing therapies
+                            focused on stress reduction and emotional harmony.</p>
+                    </div>
+                </div>
+            </section>
+
+            
+           
+
+        </div>
+    </main>
+
+    <!-- Footer Block -->
+    <footer class="border-t border-sand-200 py-8 bg-sand-100/40 text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span>&copy; 2026 Revital Yoga and Healing Centre. All rights reserved.</span>
+            </div>
+            <div class="flex gap-6">
+                <a href="privecypolicy.html" class="hover:text-slate-800 transition-colors">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-slate-800 transition-colors">Terms of Service</a>
+                <a href="contactus.html" class="hover:text-slate-800 transition-colors">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes - Revital Yoga and Healing Centre</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body
+    class="bg-sand-50 text-slate-800 antialiased selection:bg-sage-200 selection:text-sage-900 min-h-screen flex flex-col justify-between">
+
+    <!-- Header Block -->
+    <nav class="sticky top-0 z-50 flex w-full items-center justify-between px-4 py-3.5 backdrop-blur-md md:px-16 lg:px-24"
+        x-data="{ mobileMenuOpen: false }">
+        <a href="/">
+            <img src="logo.png" alt="logo" class="item-center h-9 w-auto" width="205" height="80" />
+        </a>
+
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="cources.html" class="text-black hover:text-black font-medium transition-colors">Classes</a>
+            <a href="about.html" class="text-black hover:text-black font-medium transition-colors">About Us</a>
+            <a href="contactus.html" class="text-black hover:text-black font-medium transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Main Content Area -->
+    <main class="py-12 md:py-20 flex-grow">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <!-- Intro Callout Box -->
+            <div
+                class="mb-10 bg-white rounded-2xl p-6 md:p-8 border border-violet-600 shadow-sm relative overflow-hidden">
+                <div class="flex items-start gap-4">
+                    <div>
+                        <h2 class="font-serif text-xl font-medium text-slate-900 mb-2">Our Classes & Programs</h2>
+                        <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                            From daily yoga and free healing sessions to focused 1-on-1 support, choose the pace
+                            and level of care that fits where you are right now.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 01: Paid Yoga Classes -->
+            <section class="mb-6 bg-white/70 rounded-2xl p-6 md:p-8 border border-violet-600">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-sage-100 flex items-center justify-center text-sage-800 font-semibold text-sm">
+                        01
+                    </div>
+                    <div>
+                        <h2 class="font-serif text-2xl text-slate-900">Paid Yoga Classes</h2>
+                        <p class="text-slate-600 text-xs md:text-sm mt-1 flex items-center gap-1.5">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 text-sage-600"></i>
+                            7:15 – 8:15 AM &middot; Monday to Saturday
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="bg-sand-50/60 rounded-xl border border-sand-100 p-5">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-sage-700">Monthly</span>
+                        <p class="text-xl font-semibold text-slate-900 mt-1">&#8377;1,500</p>
+                    </div>
+                    <div class="bg-sand-50/60 rounded-xl border border-sand-100 p-5">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-sage-700">Quarterly</span>
+                        <p class="text-xl font-semibold text-slate-900 mt-1">&#8377;3,600</p>
+                    </div>
+                    <div class="bg-sage-100 rounded-xl border border-sage-100 p-5 flex flex-col justify-center">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-sage-800">Try it
+                            first</span>
+                        <p class="text-sm font-semibold text-sage-900 mt-1">2 days free demo</p>
+                    </div>
+                </div>
+
+                <div class="mt-5 flex justify-end">
+                    <button
+                        class="text-sm font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 shadow-lg shadow-violet-300/50 hover:shadow-violet-400/60 hover:opacity-90 active:scale-[0.99] transition-all duration-200 rounded-full px-5 py-2.5 inline-flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
+                        Enroll Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Section 02: Free Healing Sessions -->
+            <section class="mb-6 bg-white/70 rounded-2xl p-6 md:p-8 border border-violet-600">
+                <div class="flex items-center justify-between gap-4 flex-wrap">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-sage-100 flex items-center justify-center text-sage-800 font-semibold text-sm">
+                            02
+                        </div>
+                        <div>
+                            <h2 class="font-serif text-2xl text-slate-900">Free Healing Sessions</h2>
+                            <p class="text-slate-600 text-xs md:text-sm mt-1 flex items-center gap-1.5">
+                                <i data-lucide="clock" class="w-3.5 h-3.5 text-sage-600"></i>
+                                8:15 – 8:30 AM (15 min) &middot; Monday to Saturday
+                            </p>
+                        </div>
+                    </div>
+                    <span
+                        class="text-[10px] font-semibold uppercase tracking-wider px-3 py-1.5 bg-sage-100 text-sage-800 rounded-md shrink-0">Free</span>
+                </div>
+
+                <div class="mt-5 flex justify-end">
+                    <button
+                        class="text-sm font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 shadow-lg shadow-violet-300/50 hover:shadow-violet-400/60 hover:opacity-90 active:scale-[0.99] transition-all duration-200 rounded-full px-5 py-2.5 inline-flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
+                        Enroll Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Section 03: Paid Healing Club (Regular) -->
+            <section class="mb-6 bg-white/70 rounded-2xl p-6 md:p-8 border border-violet-600">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-sage-100 flex items-center justify-center text-sage-800 font-semibold text-sm">
+                        03
+                    </div>
+                    <div>
+                        <h2 class="font-serif text-2xl text-slate-900">Paid Healing Club (Regular)</h2>
+                        <p class="text-slate-600 text-xs md:text-sm mt-1 flex items-center gap-1.5">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 text-sage-600"></i>
+                            2:30 PM (40–50 min) &middot; 4–5 days a week
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="bg-sand-50/60 rounded-xl border border-sand-100 p-5">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-sage-700">Weekly</span>
+                        <p class="text-xl font-semibold text-slate-900 mt-1">&#8377;333</p>
+                    </div>
+                    <div class="bg-sand-50/60 rounded-xl border border-sand-100 p-5">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-sage-700">Monthly</span>
+                        <p class="text-xl font-semibold text-slate-900 mt-1">&#8377;1,111</p>
+                    </div>
+                    <div class="bg-sand-50/60 rounded-xl border border-sand-100 p-5">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-sage-700">Quarterly</span>
+                        <p class="text-xl font-semibold text-slate-900 mt-1">&#8377;3,000</p>
+                    </div>
+                </div>
+
+                <div class="mt-5 flex justify-end">
+                    <button
+                        class="text-sm font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 shadow-lg shadow-violet-300/50 hover:shadow-violet-400/60 hover:opacity-90 active:scale-[0.99] transition-all duration-200 rounded-full px-5 py-2.5 inline-flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
+                        Enroll Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Section 04: 1-on-1 Healing Session -->
+            <section class="bg-white/70 rounded-2xl p-6 md:p-8 border border-violet-600">
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-8 h-8 rounded-lg bg-sage-100 flex items-center justify-center text-sage-800 font-semibold text-sm">
+                        04
+                    </div>
+                    <div>
+                        <h2 class="font-serif text-2xl text-slate-900">1-on-1 Healing Session</h2>
+                        <p class="text-slate-600 text-xs md:text-sm mt-1">Time is scheduled around your comfort,
+                            confirmed on the orientation call.</p>
+                    </div>
+                </div>
+
+                <div class="bg-sage-100 rounded-xl border border-sage-100 p-4 mb-5 flex items-start gap-2.5">
+                    <i data-lucide="phone-call" class="w-4 h-4 text-sage-700 mt-0.5 shrink-0"></i>
+                    <p class="text-sm text-sage-900">Free 15-minute orientation call before registration, to
+                        understand your needs.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="bg-sand-50/60 rounded-xl border border-sand-100 p-5">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-sage-700">3 Sessions</span>
+                        <p class="text-xl font-semibold text-slate-900 mt-1">&#8377;3,333</p>
+                    </div>
+                    <div class="bg-sand-50/60 rounded-xl border border-sand-100 p-5">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-sage-700">5 Sessions</span>
+                        <p class="text-xl font-semibold text-slate-900 mt-1">&#8377;5,555</p>
+                    </div>
+                    <div class="bg-sand-50/60 rounded-xl border border-sand-100 p-5 flex flex-col justify-center">
+                        <span class="text-[10px] font-semibold uppercase tracking-wider text-sage-700">Or</span>
+                        <p class="text-sm font-semibold text-slate-900 mt-1">Customised plan</p>
+                    </div>
+                </div>
+
+                <div class="mt-5 flex justify-end">
+                    <button
+                        class="text-sm font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 shadow-lg shadow-violet-300/50 hover:shadow-violet-400/60 hover:opacity-90 active:scale-[0.99] transition-all duration-200 rounded-full px-5 py-2.5 inline-flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
+                        Enroll Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer Block -->
+    <footer class="border-t border-sand-200 py-8 bg-sand-100/40 text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span>&copy; 2026 Revital Yoga and Healing Centre. All rights reserved.</span>
+            </div>
+            <div class="flex gap-6">
+                <a href="privecypolicy.html" class="hover:text-slate-800 transition-colors">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-slate-800 transition-colors">Terms of Service</a>
+                
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

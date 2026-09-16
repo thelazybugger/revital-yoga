@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Material - PrebuiltUI</title>
+        <link rel="stylesheet" href="./output.css" />
+        <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    </head>
+
+    <body>
+    <nav class="sticky top-0 z-50 flex w-full items-center justify-between px-4 py-3.5 backdrop-blur-md md:px-16  lg:px-24 "
+        x-data="{ mobileMenuOpen: false }">
+        <a href="/">
+            <img src="logo.png" alt="logo" class="item-center h-9 w-auto" width="205" height="80" />
+        </a>
+    
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="cources.html" class="text-black hover:text-black font-medium transition-colors">Classes</a>
+            <a href="about.html" class="text-black hover:text-black font-medium transition-colors">About Us</a>
+            <a href="contactus.html" class="text-black hover:text-black font-medium transition-colors">Contact</a>
+           
+        </div>
+    
+        
+    
+    </nav>
+    
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+    
+   
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+        
+      <section id="home" class="relative overflow-hidden"></section>
+        <main class="px-4 ">
+       
+
+<img alt="Hero Background" width="1440" height="819"
+        decoding="async" data-nimg="1"
+        class="-z-1 pointer-events-none absolute inset-0 size-full object-cover blur-[2px]" style="color:transparent"
+        src="classroom.jpeg" />
+    <div class="flex flex-col items-center justify-center h-svh text-white">
+        <h1 class="text-center font-urbanist text-5xl/15 md:text-6xl/18 mt-4 font-bold max-w-3xl">Transform your body
+            and mind through yoga</h1>
+        <p class="text-center text-base/7 max-w-xl mt-4">Join a community of mindful movers. In-studio and online yoga
+            classes for all levels, designed to reconnect your body and breath.</p><button
+            class="bg-white hover:bg-zinc-100 text-black px-6 py-2.5 rounded-full mt-4" onclick="location.href='cources.html'">Book a Class</button>
+    </div>
+</section>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+    * {
+        font-family: "Geist", sans-serif;
+    }
+</style>
+
+<section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-9">
+            <span
+                class=" bg-white rounded-full px-6 py-2 uppercase tracking-wider font-semibold">Our
+                Features</span>
+            <h2 class="text-4xl  font-medium text-zinc-900 mt-6">Everything You Need for Holistic Wellness
+            </h2>
+            <p class="text-base text-zinc-600 max-w-md mx-auto mt-3">Tailored practices and tranquil environments
+                designed to nurture your mind, body, and spirit.</p>
+        </div>
+
+        <div class="flex flex-col gap-5">
+            <!-- Row 1 -->
+            <div class="flex flex-col md:flex-row gap-5">
+                <!-- Large Card with Image -->
+                <div
+                    class="md:w-[60%] md:h-60 bg-white rounded-xl hover:shadow-sm border border-violet-600 transition-all duration-300 p-5 flex flex-col md:flex-row gap-5">
+                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&q=80&w=600"
+                        alt="Daily Flow Yoga" class="w-full h-48 md:h-full md:w-[45%] object-cover rounded-2xl" />
+                    <div class="flex flex-col mt-2">
+                       
+                        <h3 class="text-sm font-medium text-zinc-900">Daily Flow & Asana Classes</h3>
+                        <p class="text-sm/6 text-zinc-800 mt-2.5">Guided movement sessions designed for all experience
+                            levels, from energizing morning flows to relaxing evening poses.</p>
+                    </div>
+                </div>
+
+                <!-- Small Card -->
+                <div
+                    class="md:w-[40%] bg-white rounded-xl hover:shadow-sm border border-violet-600 transition-all duration-300 px-6 py-6 md:pt-7">
+                    
+                    <h3 class="text-sm font-medium text-zinc-900">Pranayama & Breathwork</h3>
+                    <p class="text-sm text-zinc-800 mt-2.5">Master ancient, controlled breathing techniques to expand
+                        vitality, reduce daily stress, and restore nervous system balance.</p>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="flex flex-col md:flex-row gap-5">
+                <!-- Small Card -->
+                <div
+                    class="md:w-[40%] bg-white rounded-xl hover:shadow-sm border border-violet-600 transition-all duration-300 px-6 py-6 md:pt-7">
+                   
+                    <h3 class="text-sm font-medium text-zinc-900">Sound Bath Healing</h3>
+                    <p class="text-sm text-zinc-800 mt-2.5">Immerse yourself in therapeutic acoustic sound frequencies
+                        using Tibetan singing bowls to facilitate effortless mental stillness.</p>
+                </div>
+
+                <!-- Large Card with Image -->
+                <div
+                    class="md:w-[60%] md:h-60 bg-white rounded-xl hover:shadow-sm border border-violet-600 transition-all duration-300 p-5 flex flex-col md:flex-row gap-5">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=600"
+                        alt="Meditation Sanctuary" class="w-full h-48 md:h-full md:w-[45%] object-cover rounded-2xl" />
+                    <div class="flex flex-col mt-2">
+                       
+                        <h3 class="text-sm font-medium text-zinc-900">Guided Meditation Sanctuary</h3>
+                        <p class="text-sm/6 text-zinc-800 mt-2.5">Experience mindfulness practices created to quiet the
+                            inner chatter, boost emotional clarity, and deepen self-awareness.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="flex flex-col md:flex-row gap-5">
+                <!-- Large Card with Image -->
+                <div
+                    class="md:w-[60%] md:h-60 bg-white rounded-xl hover:shadow-sm border border-violet-600 transition-all duration-300 p-5 flex flex-col md:flex-row gap-5">
+                    <img src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&q=80&w=600"
+                        alt="Private Mentorship" class="w-full h-48 md:h-full md:w-[45%] object-cover rounded-2xl" />
+                    <div class="flex flex-col mt-2">
+                       
+                        <h3 class="text-sm font-medium text-zinc-900">1-on-1 Private Mentorship</h3>
+                        <p class="text-sm/6 text-zinc-800 mt-2.5">Personalized sessions with certified healers and
+                            instructors to address individual health goals and physical alignment needs.</p>
+                    </div>
+                </div>
+
+                <!-- Small Card -->
+                <div
+                    class="md:w-[40%] bg-white rounded-xl hover:shadow-sm border border-violet-600 transition-all duration-300 px-6 py-6 md:pt-7">
+                    
+                    <h3 class="text-sm font-medium text-zinc-900">Therapeutic Healing</h3>
+                    <p class="text-sm text-zinc-800 mt-2.5">Gentle, posture-correcting techniques focused on relieving
+                        chronic joint stiffness, back discomfort, and bodily tension.</p>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="flex flex-col md:flex-row gap-5">
+                <!-- Small Card -->
+                <div
+                    class="md:w-[40%] bg-white rounded-xl hover:shadow-sm border border-violet-600 transition-all duration-300 px-6 py-6 md:pt-7">
+                    
+                    <h3 class="text-sm font-medium text-zinc-900">Supportive Healing Circles</h3>
+                    <p class="text-sm text-zinc-800 mt-2.5">A safe, non-judgmental community environment encouraging
+                        reflection, shared learning, and genuine human connection.</p>
+                </div>
+
+                <!-- Large Card with Image -->
+                <div
+                    class="md:w-[60%] md:h-60 bg-white rounded-xl hover:shadow-sm border border-violet-600 transition-all duration-300 p-5 flex flex-col md:flex-row gap-5">
+                    <img src="https://images.unsplash.com/photo-1510894347048-4736b14ac930?auto=format&fit=crop&q=80&w=600"
+                        alt="Weekend Retreats" class="w-full h-48 md:h-full md:w-[45%] object-cover rounded-2xl" />
+                    <div class="flex flex-col mt-2">
+                       
+                        <h3 class="text-sm font-medium text-zinc-900">Weekend Intensive Retreats</h3>
+                        <p class="text-sm/6 text-zinc-800 mt-2.5">Curated multi-day workshops focusing on total bodily
+                            rejuvenation, lifestyle detox, and immersive wellness practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+
+
+
+       
+
+
+
+
+
+            <section class="flex flex-col md:flex-row items-center justify-center gap-20 mt-20">
+                <div class="relative shadow-2xl shadow-indigo-600/40 rounded-2xl overflow-hidden shrink-0">
+                    <img class="max-w-sm w-full object-cover rounded-2xl" alt="" src="Priya Wadhwani.jpeg" />
+                    <div class="flex gap-1 max-w-72 absolute bottom-8 left-8 backdrop-blur-md md:px-9 p-4 rounded-xl bg-white/5">
+                       
+                        <p class="text-sm font-medium text-white">Mrs. Priya Wadhwani</p>
+                    </div>
+                </div>
+                <div class="text-sm text-slate-600 max-w-md">
+                    <h1 class="text-xl uppercase font-semibold text-slate-700">Founder</h1>
+                    <div class="w-24 h-[3px] rounded-full bg-gradient-to-r from-indigo-600 to-[#DDD9FF]"></div>
+                    <p class="mt-8">
+                         I precious Priya Wadhwani, am the founder of 'Revital yoga and healing centre' and my journey as yoga instructor
+                        with this wellness centre was started in January 2017. Years passed and have many Deep and holistic experience with
+                        yoga, Pranayam ,meditation and there impacts in our daily life.
+                        In 2020, I entered deep knowledge of holistic health with the help of Reiki healing , Ho'oponopono, gratitude
+                        healing, EFT technique of emotional balance, love'ponopono and many more techniques of NLP gradually.
+                        With deep dives, I came to know ,90% people are suffering from many of health wealth relationship and career issues.
+                        I always wanted to help people to overcome there problems and with the grace of God thousands of people connected
+                        with me and experienced drastic changes in there health and energy level.
+                        Always feel great to help you and give value to your life.
+                    </p>
+                    <button class="flex items-center gap-2 mt-8 hover:opacity-90 transition btn py-3 px-8 rounded-full text-white" onclick="window.location.href='https://calendly.com/revitalyoga75/new-meeting'">
+                        <span>Let's Connect</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-5" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+
+<!-- Testimonials Section -->
+<section class="relative w-full flex flex-col items-center justify-center py-20 text-black overflow-hidden ">
+
+    <!-- Radial Glow Background Effects -->
+    <div class="absolute inset-0 w-full h-full z-0 pointer-events-none">
+        <div class="absolute top-[20%] right-0 w-[420px] h-[420px] bg-violet-500/10 rounded-full blur-[140px]"></div>
+        <div class="absolute bottom-0 left-0 w-[320px] h-[320px] bg-violet-500/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <!-- Header Content -->
+    <div class="z-10 text-center px-4">
+        <h1 class="text-xl uppercase font-semibold text-slate-700">Our Testimonials</h1>
+    </div>
+<!-- Testimonial Slider Container -->
+<div class="relative w-full max-w-4xl mx-auto px-4 mt-12 z-10">
+    <!-- Glassmorphic Card Box -->
+    <div
+        class="backdrop-blur-md bg-white/[0.04] border border-white/10 rounded-2xl shadow-2xl overflow-hidden p-8 md:p-12">
+
+        <!-- Top Glowing Border Line Accent -->
+        <div
+            class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-violet-500/40 to-transparent">
+        </div>
+
+        <!-- Dynamic Content Transition Wrapper -->
+        <div id="slider-content" class="flex flex-col gap-8 transition-opacity duration-300 opacity-100">
+
+            <!-- Top Meta Section (User Info & Counter) -->
+            <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                <div class="flex items-center gap-4">
+                    <!-- Initials Avatar Badge -->
+                    <div id="client-avatar"
+                        class="flex h-14 w-14 items-center justify-center rounded-full bg-violet-500/20 text-xl font-semibold text-violet-400 shrink-0">
+                        RK
+                    </div>
+                    <div>
+                        <p id="client-name" class="text-lg font-semibold text-gray-900">Rashmi Khatri</p>
+                        <p id="client-role" class="text-sm text-gray-400">Yoga Student</p>
+                    </div>
+                </div>
+                <!-- Slide Indicator Counter -->
+                <div id="slide-counter"
+                    class="text-right text-xs uppercase tracking-[0.35em] text-gray-400 font-medium">
+                    01 / 06
+                </div>
+            </div>
+
+            <!-- Content Block Quote Box -->
+            <div class="relative rounded-2xl backdrop-blur-md md:px-9 p-4 rounded-xl border border-violet-500 glass bg-violet-900/[0.05] p-8 md:p-10">
+                <!-- Decorative Quote Icon Symbol -->
+                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="absolute top-6 left-6 h-10 w-10 text-violet-500/20" aria-hidden="true">
+                    <path
+                        d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+                    </path>
+                    <path
+                        d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+                    </path>
+                </svg>
+
+                <p id="quote-text"
+                    class="text-lg md:text-xl text-gray-800 leading-relaxed font-light relative z-10 pl-4">
+                    "My self Rashmi Khatri maine 4 months before revital yoga class join kiya tha .Class join karne
+                    se mujhe bahut benifits hue hai jaise mera energy level improve huaa ,mere back me problem
+                    tha,hump nikala huaa tha , sleep issues the . Kafi improve hua hai health me. Priya ma'am uske
+                    according mujhe guide karte hai. Revital Yoga me mere favourite sessions hai -dance,
+                    meditation,chair yoga,bottle exercise overall good experience mila hai Thank you Priya ma'am"
+                </p>
+            </div>
+        </div>
+
+        <!-- Carousel Slider Button Layout Controls -->
+        <div class="flex justify-end gap-3 mt-8 relative z-20">
+            <button type="button" id="prev-testimonial-btn" aria-label="Previous testimonial"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-violet-600 text-white transition duration-200 hover:bg-violet-700 active:scale-95 cursor-pointer">
+                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                    <path d="m15 18-6-6 6-6"></path>
+                </svg>
+            </button>
+            <button type="button" id="next-testimonial-btn" aria-label="Next testimonial"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-violet-600 text-white transition duration-200 hover:bg-violet-700 active:scale-95 cursor-pointer">
+                <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                    <path d="m9 18 6-6-6-6"></path>
+                </svg>
+            </button>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- Slider Functionality Logic Script -->
+<script>
+    const testimonials = [
+        {
+            initials: "RK",
+            name: "Rashmi Khatri",
+            role: "Yoga Student",
+            text: `"My self Rashmi Khatri maine 4 months before revital yoga class join kiya tha .Class join karne se mujhe bahut benifits hue hai jaise mera energy level improve huaa ,mere back me problem tha,hump nikala huaa tha , sleep issues the . Kafi improve hua hai health me. Priya ma'am uske according mujhe guide karte hai. Revital Yoga me mere favourite sessions hai -dance, meditation,chair yoga,bottle exercise overall good experience mila hai Thank you Priya ma'am"`
+        },
+        {
+            initials: "SV",
+            name: "Shivani Vishwakarma",
+            role: "Yoga Student",
+            text: `"Mai shivani vishwakarma mujhe 15 din ho raha hai Revital yoga ko join kiye huye. Or mujhe in 15 dino me hi kafi energetic mahasus ho raha hai, mujhe sciatica ka problem hai abhi se mujhe kafi aaram mila hai
+Revital yoga me mujhe sare activitys achhe lagte hai or priya mam bhi bahut achhe se guide karti hai 
+Thank you priya ma'am "`
+        },
+        {
+            initials: "AS",
+            name: "Anita Sahu",
+            role: "Yoga Student",
+            text: `"My self Anita Sahu
+Mujhe revital yoga classes join kare hue 4 months hue hain Yoga karne se pahle din bhar thakan mahsus hoti thi aur ab yoga karne per kafi aaram mil raha hai, din bhar energetic and light feel hota hai. Mujhe sciatica  ka problem tha , yoga karne per abhi aaram hua Hai 
+
+Thank you so much ma'am"`
+        },
+         {
+            initials: "ST",
+            name: "Sushma Tolwani",
+            role: "Yoga Student",
+            text: `"I wanted to share my wonderful experience with the Revital Healing Club. The sessions provided me with much-needed peace of mind.
+​The knowledge of Reiki therapy and Yoga I gained there has truly transformed my life. Additionally, the guidance on diet and daily routine was incredibly helpful.
+​I am deeply grateful for everything. Thank you so much! Warm regards."`
+        },
+              {
+            initials: "MP",
+            name: "Manju Puri",
+            role: "Yoga Student",
+            text: `"Hariom mera naam manju puri hai. Maine yoga class join ki thi apni health improve karne aur thoda peace paane ke liye.
+Priya Bhabhi ke saath yoga karte hue bahut accha feel hota hai, unka way of teaching bahut simple aur comfortable hai.
+Yoga join karne ke baad meri body zyada flexible aur active ho gayi hai, aur main mentally bhi zyada calm aur relaxed feel karti hoon.
+Healing classes ne bhi mujhe andar se shanti aur positive energy di hai.
+Mujhe bahut accha lagta hai ki main is journey ka part hoon. Thank you Priya bhabhi"`
+        },
+
+           {
+            initials: "RL",
+            name: "Ritika Lulla",
+            role: "Yoga Student",
+            text: `"In Revital yoga I join 2020...that time I dont know anything about yoga.. meditation pranyam..but joining the classes and learn so many thing from basic to advanced...mam teach me each posture in easyway and also giving  tips of dieting and detox  body ....after yoga journey.. last year I learn healing .these was amazing experience... priya mam inspired me alot....she help me to connect to the  soul... Thank you so much mam ...always inspire me best journey with Revital yoga"`
+        }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const contentWrapper = document.getElementById("slider-content");
+        const avatarEl = document.getElementById("client-avatar");
+        const nameEl = document.getElementById("client-name");
+        const roleEl = document.getElementById("client-role");
+        const counterEl = document.getElementById("slide-counter");
+        const quoteEl = document.getElementById("quote-text");
+
+        const prevBtn = document.getElementById("prev-testimonial-btn");
+        const nextBtn = document.getElementById("next-testimonial-btn");
+
+        let currentIndex = 0;
+
+        function updateTestimonial(newIndex) {
+            // 1. Fade content container out
+            contentWrapper.classList.remove("opacity-100");
+            contentWrapper.classList.add("opacity-0");
+
+            // 2. Wait for the 300ms fade animation to finish before replacing content
+            setTimeout(() => {
+                currentIndex = newIndex;
+                const data = testimonials[currentIndex];
+
+                avatarEl.textContent = data.initials;
+                nameEl.textContent = data.name;
+                roleEl.textContent = data.role;
+                quoteEl.textContent = data.text;
+
+                const slideNumber = String(currentIndex + 1).padStart(2, "0");
+                const totalSlides = String(testimonials.length).padStart(2, "0");
+                counterEl.textContent = `${slideNumber} / ${totalSlides}`;
+
+                // 3. Fade content back in
+                contentWrapper.classList.remove("opacity-0");
+                contentWrapper.classList.add("opacity-100");
+            }, 300);
+        }
+
+        nextBtn.addEventListener("click", () => {
+            const nextIndex = (currentIndex < testimonials.length - 1) ? currentIndex + 1 : 0;
+            updateTestimonial(nextIndex);
+        });
+
+        prevBtn.addEventListener("click", () => {
+            const prevIndex = (currentIndex > 0) ? currentIndex - 1 : testimonials.length - 1;
+            updateTestimonial(prevIndex);
+        });
+    });
+</script>
+
+<div class="flex flex-wrap items-center justify-center gap-10 mt-16">
+    <div class="max-w-80 hover:-translate-y-0.5 transition duration-300">
+        <h3 class="text-base font-semibold text-slate-700 mt-4">Vibhuti Arora</h3>
+        <video class="rounded-xl" alt="Autumn Leaf Harmony" src="Video 1.mp4" controls=""></video>
+
+    </div>
+    <div class="max-w-80 hover:-translate-y-0.5 transition duration-300">
+        <h3 class="text-base font-semibold text-slate-700 mt-4">Sakshi Gurubakshani</h3>
+        <video class="rounded-xl" alt="Autumn Leaf Harmony" src="Video 3.mp4" controls=""></video>
+
+    </div>
+    <div class="max-w-80 hover:-translate-y-0.5 transition duration-300">
+        <h3 class="text-base font-semibold text-slate-700 mt-4">Usha Taneani</h3>
+        <video class="rounded-xl" alt="Autumn Leaf Harmony" src="Video 2.mp4" controls=""></video>
+
+    </div>
+</div>
+   
+
+         
+
+            <section class="flex flex-col items-center justify-center mt-40">
+
+            <div class="flex flex-col items-center text-center px-4 py-10">
+                <p class="text-base font-medium text-slate-600">FAQ</p>
+                <h1 class="text-3xl md:text-4xl font-semibold mt-2">Frequently Asked Questions</h1>
+                <p class="text-sm text-slate-500 mt-4 max-w-sm">
+                    Proactively answering FAQs boosts user confidence and cuts down on support tickets.
+                </p>
+            
+                <div id="faqContainer" class="max-w-xl w-full mt-6 flex flex-col rounded-full gap-4 items-start text-left"></div>
+            </div>
+            
+          <script>
+            const faqsData = [
+                {
+                    question: 'What are the benefits of yoga and healing sessions?',
+                    answer: 'Yoga and healing bring balance to the body, mind, and emotions. They can help reduce stress, anxiety, fatigue, sleep disorders, emotional blockages, and various lifestyle-related issues.'
+                },
+                {
+                    question: 'Do I need prior experience to learn yoga?',
+                    answer: 'No. All our yoga sessions are suitable for both beginners and experienced practitioners. Practice is tailored according to your capability and health condition.'
+                },
+                {
+                    question: 'What is a healing session?',
+                    answer: 'A healing session is a holistic process aimed at establishing balance across the body, mind, and energy levels, helping you feel calmer, more positive, and energized.'
+                },
+                {
+                    question: 'Are online yoga and healing sessions available?',
+                    answer: 'Yes, we offer both online and offline sessions so you can join according to your convenience.'
+                },
+                {
+                    question: 'What is the duration of a session?',
+                    answer: 'Yoga classes usually last 45 to 60 minutes. Healing sessions can range from 45 to 90 minutes depending on individual requirements.'
+                },
+                {
+                    question: 'Does yoga help with weight loss?',
+                    answer: 'Regular yoga practice, combined with proper breathing techniques and a healthy lifestyle, can support weight management. Results vary from person to person.'
+                },
+                {
+                    question: 'Can senior citizens practice yoga?',
+                    answer: 'Yes. Safe and gentle yoga exercises are conducted for senior citizens, tailored specifically to their physical condition.'
+                },
+                {
+                    question: 'How many healing sessions should I take?',
+                    answer: 'It depends on your personal needs and goals. Some people feel a positive shift in just one session, while others may require multiple sessions for better results.'
+                },
+                {
+                    question: 'What should I bring to my first class?',
+                    answer: 'For yoga, wear comfortable clothing, bring a yoga mat, a water bottle, a small towel, and come with an open mind. Please inform us beforehand if you have any medical conditions. For online healing sessions, ensure a stable internet connection and a quiet space free of distractions.'
+                },
+                {
+                    question: 'How can I register for a yoga or healing session?',
+                    answer: 'You can fill out the contact form on our website, send us a WhatsApp message, or call us directly to book your slot.'
+                },
+                {
+                    question: 'Are yoga and healing a replacement for medical treatment?',
+                    answer: 'Yoga and healing are complementary practices meant to support overall health and well-being. They are not a substitute for medical treatment, diagnosis, or prescription medication. Always consult your doctor for serious health conditions.'
+                }
+            ];
+
+            const faqContainer = document.getElementById('faqContainer');
+
+            faqContainer.innerHTML = faqsData.map((faq, index) => `
+            <div class="faq-item flex flex-col items-start w-full" data-index="${index}">
+                <div class="faq-header flex items-center justify-between w-full cursor-pointer bg-gradient-to-r from-violet-50 to-white border border-slate-200 p-4 rounded transition-all">
+                    <h2 class="text-sm font-medium text-slate-800">${faq.question}</h2>
+                    <svg class="faq-icon transition-all duration-500 ease-in-out" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <p class="faq-answer text-sm text-slate-900 px-4 overflow-hidden max-h-0 opacity-0 -translate-y-2 transition-all duration-500 ease-in-out">
+                    ${faq.answer}
+                </p>
+            </div>
+            `).join('');
+
+            let openIndex = null;
+
+            document.querySelectorAll('.faq-header').forEach((header, index) => {
+                header.addEventListener('click', () => {
+                    const allAnswers = document.querySelectorAll('.faq-answer');
+                    const allIcons = document.querySelectorAll('.faq-icon');
+
+                    allAnswers.forEach((el, i) => {
+                        if (i === index) {
+                            const isOpen = el.classList.contains('opacity-100');
+                            el.classList.toggle('opacity-100', !isOpen);
+                            el.classList.toggle('max-h-[300px]', !isOpen);
+                            el.classList.toggle('translate-y-0', !isOpen);
+                            el.classList.toggle('pt-4', !isOpen);
+                            el.classList.toggle('max-h-0', isOpen);
+                            el.classList.toggle('-translate-y-2', isOpen);
+                            allIcons[i].classList.toggle('rotate-180', !isOpen);
+                        } else {
+                            el.classList.remove('opacity-100', 'max-h-[300px]', 'translate-y-0', 'pt-4');
+                            el.classList.add('max-h-0', '-translate-y-2');
+                            allIcons[i].classList.remove('rotate-180');
+                        }
+                    });
+                });
+            });
+        </script>
+        </section>
+        
+        </main>
+
+    <footer class="border-t border-sand-200 py-8 bg-sand-100/40 text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span>&copy; 2026 Revital Yoga and Healing Centre. All rights reserved.</span>
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-slate-800 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-slate-800 transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-slate-800 transition-colors">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+        <script src="/script.js"></script>
+    </body>
+</html>
