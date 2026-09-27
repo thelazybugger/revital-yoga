@@ -1,0 +1,134 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+enum ContactStatus {
+  NEW
+  READ
+  REPLIED
+  ARCHIVED
+}
+
+model Course {
+  id          Int          @id @default(autoincrement())
+  name        String
+  slug        String       @unique
+  description String?
+  schedule    String?
+  active      Boolean      @default(true)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  plans       CoursePlan[]
+}
+
+model CoursePlan {
+  id        Int       @id @default(autoincrement())
+  courseId  Int
+  name      String
+  price     Decimal   @db.Decimal(10, 2)
+  active    Boolean   @default(true)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  course    Course    @relation(fields: [courseId], references: [id])
+  bookings  Booking[]
+
+  @@index([courseId])
+}
+
+model Booking {
+  id                Int           @id @default(autoincrement())
+  bookingReference  String        @unique
+  coursePlanId      Int
+  fullName          String
+  email             String
+  phone             String
+  age               Int
+  gender            String
+  purpose           String
+  message           String?
+  termsAccepted     Boolean
+  status            BookingStatus @default(PENDING)
+  paymentStatus     PaymentStatus @default(PENDING)
+  amountPaid        Decimal       @default(0) @db.Decimal(10, 2)
+  razorpayOrderId   String?       @unique
+  razorpayPaymentId String?       @unique
+  paidAt            DateTime?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  coursePlan        CoursePlan    @relation(fields: [coursePlanId], references: [id])
+
+  @@index([email])
+  @@index([status])
+  @@index([paymentStatus])
+  @@index([createdAt])
+}
+
+model ContactMessage {
+  id        Int           @id @default(autoincrement())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  status    ContactStatus @default(NEW)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+}
+
+
+model PaymentWebhookEvent {
+  id          Int      @id @default(autoincrement())
+  eventId     String   @unique
+  event       String
+  payload     Json
+  receivedAt  DateTime @default(now())
+  processedAt DateTime?
+
+  @@index([event])
+  @@index([receivedAt])
+}
+
+
+enum AdminRole {
+  ADMIN
+  STAFF
+}
+
+model AdminUser {
+  id           Int       @id @default(autoincrement())
+  name         String
+  email        String    @unique
+  passwordHash String
+  role         AdminRole @default(ADMIN)
+  active       Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([active])
+}

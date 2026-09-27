@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revital Yoga Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <div id="loginView" class="min-h-screen flex items-center justify-center p-6">
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+      <h1 class="text-2xl font-bold">Revital Yoga Admin</h1>
+      <p class="text-slate-500 mt-1 mb-6">Manage bookings, payments and enquiries.</p>
+      <form id="loginForm" class="space-y-4">
+        <input id="email" type="email" required placeholder="Admin email" class="w-full border rounded-lg p-3">
+        <input id="password" type="password" required placeholder="Password" class="w-full border rounded-lg p-3">
+        <button class="w-full bg-slate-900 text-white rounded-lg py-3 font-semibold">Sign in</button>
+      </form>
+      <p id="loginError" class="text-red-600 text-sm mt-4"></p>
+    </div>
+  </div>
+
+  <div id="appView" class="hidden min-h-screen">
+    <header class="bg-white border-b">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div>
+          <h1 class="text-xl font-bold">Revital Yoga Admin</h1>
+          <p id="adminName" class="text-sm text-slate-500"></p>
+        </div>
+        <button id="logoutBtn" class="border rounded-lg px-4 py-2">Logout</button>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-6 space-y-8">
+      <section>
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-2xl font-bold">Dashboard</h2>
+          <button id="refreshAll" class="border bg-white rounded-lg px-4 py-2">Refresh</button>
+        </div>
+        <div id="stats" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4"></div>
+      </section>
+
+      <section class="bg-white rounded-2xl shadow p-5">
+        <div class="flex flex-col gap-3 mb-5">
+          <div class="flex flex-wrap gap-2 items-center">
+            <h2 class="text-xl font-bold mr-auto">Bookings</h2>
+            <button id="exportCsv" class="border rounded-lg px-3 py-2">Export CSV</button>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <input id="bookingSearch" placeholder="Search name, email, phone, reference" class="border rounded-lg px-3 py-2 flex-1 min-w-56">
+            <select id="bookingStatus" class="border rounded-lg px-3 py-2">
+              <option value="">All booking status</option>
+              <option>PENDING</option><option>CONFIRMED</option><option>CANCELLED</option><option>COMPLETED</option>
+            </select>
+            <select id="bookingPaymentStatus" class="border rounded-lg px-3 py-2">
+              <option value="">All payment status</option>
+              <option>PAID</option><option>PENDING</option><option>FAILED</option><option>REFUNDED</option>
+            </select>
+            <input id="fromDate" type="date" class="border rounded-lg px-3 py-2">
+            <input id="toDate" type="date" class="border rounded-lg px-3 py-2">
+            <button id="filterBookings" class="bg-slate-900 text-white rounded-lg px-4 py-2">Apply</button>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead><tr class="border-b text-left">
+              <th class="p-3">Reference</th><th class="p-3">Customer</th><th class="p-3">Course / Plan</th>
+              <th class="p-3">Paid</th><th class="p-3">Payment</th><th class="p-3">Status</th><th class="p-3">Date</th>
+            </tr></thead>
+            <tbody id="bookingsBody"></tbody>
+          </table>
+        </div>
+        <div id="bookingPagination" class="flex justify-between items-center mt-4 text-sm"></div>
+      </section>
+
+      <section class="bg-white rounded-2xl shadow p-5">
+        <div class="flex flex-wrap gap-2 mb-4 items-center">
+          <h2 class="text-xl font-bold mr-auto">Contact Enquiries</h2>
+          <select id="contactStatusFilter" class="border rounded-lg px-3 py-2">
+            <option value="">All statuses</option><option>NEW</option><option>READ</option><option>REPLIED</option><option>ARCHIVED</option>
+          </select>
+          <input id="contactSearch" placeholder="Search enquiries" class="border rounded-lg px-3 py-2">
+          <button id="filterContacts" class="border rounded-lg px-4 py-2">Apply</button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead><tr class="border-b text-left">
+              <th class="p-3">Name</th><th class="p-3">Email</th><th class="p-3">Subject</th>
+              <th class="p-3">Message</th><th class="p-3">Status</th><th class="p-3">Date</th>
+            </tr></thead>
+            <tbody id="contactsBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="detailModal" class="hidden fixed inset-0 bg-black/50 p-4 items-center justify-center">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6">
+      <div class="flex justify-between items-center mb-5">
+        <h2 class="text-xl font-bold">Booking Details</h2>
+        <button id="closeModal" class="text-2xl">&times;</button>
+      </div>
+      <div id="detailContent" class="grid md:grid-cols-2 gap-4 text-sm"></div>
+    </div>
+  </div>
+
+<script>
+const API_BASE = "http://localhost:5000/api";
+let token = localStorage.getItem("revital_admin_token");
+let admin = JSON.parse(localStorage.getItem("revital_admin_user") || "null");
+let bookingPage = 1;
+let lastBookings = [];
+
+const $ = id => document.getElementById(id);
+const escapeHtml = v => String(v ?? "").replace(/[&<>"']/g, c => ({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+}[c]));
+
+async function api(path, options = {}) {
+  const response = await fetch(API_BASE + path, {
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      ...(options.headers || {})
+    }
+  });
+  const data = await response.json().catch(() => ({}));
+  if (response.status === 401) { logout(); throw new Error("Incorrect Credentials"); }
+  if (!response.ok) throw new Error(data.message || "Request failed");
+  return data;
+}
+
+function logout() {
+  token = null; admin = null;
+  localStorage.removeItem("revital_admin_token");
+  localStorage.removeItem("revital_admin_user");
+  $("appView").classList.add("hidden");
+  $("loginView").classList.remove("hidden");
+}
+
+$("loginForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  $("loginError").textContent = "";
+  try {
+    const r = await api("/admin/login", {
+      method:"POST",
+      body:JSON.stringify({email:$("email").value,password:$("password").value})
+    });
+    token = r.data.token; admin = r.data.admin;
+    localStorage.setItem("revital_admin_token", token);
+    localStorage.setItem("revital_admin_user", JSON.stringify(admin));
+    showApp();
+  } catch(e) { $("loginError").textContent = e.message; }
+});
+
+$("logoutBtn").onclick = logout;
+
+function showApp() {
+  $("loginView").classList.add("hidden");
+  $("appView").classList.remove("hidden");
+  $("adminName").textContent = `${admin.name} • ${admin.email}`;
+  loadAll();
+}
+
+async function loadDashboard() {
+  const r = await api("/admin/dashboard"), c = r.data.counts;
+  const cards = [
+    ["Bookings",c.totalBookings],["Pending",c.pendingBookings],["Confirmed",c.confirmedBookings],
+    ["Paid",c.paidBookings],["Failed",c.failedPayments],["Enquiries",c.totalContacts],
+    ["New",c.newContacts],["Revenue",`₹${r.data.revenue.toLocaleString("en-IN")}`]
+  ];
+  $("stats").innerHTML = cards.map(([l,v]) =>
+    `<div class="bg-white rounded-xl shadow p-4"><div class="text-xs text-slate-500">${l}</div><div class="text-xl font-bold mt-1">${escapeHtml(v)}</div></div>`
+  ).join("");
+}
+
+function bookingQuery(page=1) {
+  const p = new URLSearchParams({
+    page, limit: 20,
+    search: $("bookingSearch").value.trim(),
+    status: $("bookingStatus").value,
+    paymentStatus: $("bookingPaymentStatus").value,
+    from: $("fromDate").value,
+    to: $("toDate").value
+  });
+  for (const [k,v] of [...p.entries()]) if (!v) p.delete(k);
+  return `/admin/bookings?${p}`;
+}
+
+async function loadBookings(page=bookingPage) {
+  bookingPage = page;
+  const r = await api(bookingQuery(page));
+  lastBookings = r.data.items;
+  $("bookingsBody").innerHTML = r.data.items.map(b => `
+    <tr class="border-b hover:bg-slate-50 cursor-pointer" data-booking-id="${b.id}">
+      <td class="p-3 font-semibold">${escapeHtml(b.bookingReference)}</td>
+      <td class="p-3"><div>${escapeHtml(b.fullName)}</div><div class="text-xs text-slate-500">${escapeHtml(b.email)}</div></td>
+      <td class="p-3"><div>${escapeHtml(b.coursePlan.course.name)}</div><div class="text-xs text-slate-500">${escapeHtml(b.coursePlan.name)}</div></td>
+      <td class="p-3">₹${Number(b.amountPaid||0).toLocaleString("en-IN")}</td>
+      <td class="p-3">${escapeHtml(b.paymentStatus)}</td>
+      <td class="p-3">
+        <select class="booking-status border rounded px-2 py-1" data-id="${b.id}">
+          ${["PENDING","CONFIRMED","CANCELLED","COMPLETED"].map(s=>`<option value="${s}" ${s===b.status?"selected":""}>${s}</option>`).join("")}
+        </select>
+      </td>
+      <td class="p-3 whitespace-nowrap">${new Date(b.createdAt).toLocaleString("en-IN")}</td>
+    </tr>
+  `).join("");
+
+  document.querySelectorAll(".booking-status").forEach(s => s.onchange = async e => {
+    e.stopPropagation();
+    try {
+      await api(`/admin/bookings/${s.dataset.id}/status`, {
+        method:"PATCH", body:JSON.stringify({status:s.value})
+      });
+      await Promise.all([loadDashboard(), loadBookings(bookingPage)]);
+    } catch(err) { alert(err.message); }
+  });
+
+  document.querySelectorAll("tr[data-booking-id]").forEach(row => row.onclick = e => {
+    if (e.target.closest("select")) return;
+    openBooking(row.dataset.bookingId);
+  });
+
+  $("bookingPagination").innerHTML = `
+    <button class="border rounded px-3 py-1 ${r.data.pagination.page<=1?"opacity-40":""}" ${r.data.pagination.page<=1?"disabled":""} id="prevPage">Previous</button>
+    <span>Page ${r.data.pagination.page} of ${Math.max(1,r.data.pagination.totalPages)} • ${r.data.pagination.total} records</span>
+    <button class="border rounded px-3 py-1 ${r.data.pagination.page>=r.data.pagination.totalPages?"opacity-40":""}" ${r.data.pagination.page>=r.data.pagination.totalPages?"disabled":""} id="nextPage">Next</button>
+  `;
+  $("prevPage").onclick = () => loadBookings(bookingPage-1);
+  $("nextPage").onclick = () => loadBookings(bookingPage+1);
+}
+
+async function openBooking(id) {
+  try {
+    const r = await api(`/admin/bookings/${id}`);
+    const b = r.data;
+    const rows = [
+      ["Reference",b.bookingReference],["Name",b.fullName],["Email",b.email],["Phone",b.phone],
+      ["Age",b.age],["Gender",b.gender],["Purpose",b.purpose],
+      ["Course",b.coursePlan.course.name],["Plan",b.coursePlan.name],
+      ["Plan Price",`₹${Number(b.coursePlan.price).toLocaleString("en-IN")}`],
+      ["Amount Paid",`₹${Number(b.amountPaid).toLocaleString("en-IN")}`],
+      ["Payment Status",b.paymentStatus],["Booking Status",b.status],
+      ["Razorpay Order ID",b.razorpayOrderId || "-"],
+      ["Razorpay Payment ID",b.razorpayPaymentId || "-"],
+      ["Paid At",b.paidAt ? new Date(b.paidAt).toLocaleString("en-IN") : "-"],
+      ["Created",new Date(b.createdAt).toLocaleString("en-IN")],
+      ["Message",b.message || "-"]
+    ];
+    $("detailContent").innerHTML = rows.map(([k,v]) =>
+      `<div class="border rounded-lg p-3"><div class="text-xs text-slate-500">${escapeHtml(k)}</div><div class="font-medium break-words mt-1">${escapeHtml(v)}</div></div>`
+    ).join("");
+    $("detailModal").classList.remove("hidden");
+    $("detailModal").classList.add("flex");
+  } catch(e) { alert(e.message); }
+}
+
+$("closeModal").onclick = () => {
+  $("detailModal").classList.add("hidden");
+  $("detailModal").classList.remove("flex");
+};
+
+async function loadContacts() {
+  const p = new URLSearchParams({
+    page:1, limit:50,
+    status:$("contactStatusFilter").value,
+    search:$("contactSearch").value.trim()
+  });
+  for (const [k,v] of [...p.entries()]) if (!v) p.delete(k);
+  const r = await api(`/admin/contacts?${p}`);
+  $("contactsBody").innerHTML = r.data.items.map(c => `
+    <tr class="border-b align-top">
+      <td class="p-3">${escapeHtml(c.name)}</td><td class="p-3">${escapeHtml(c.email)}</td>
+      <td class="p-3">${escapeHtml(c.subject || "-")}</td><td class="p-3 max-w-md">${escapeHtml(c.message)}</td>
+      <td class="p-3"><select class="contact-status border rounded px-2 py-1" data-id="${c.id}">
+        ${["NEW","READ","REPLIED","ARCHIVED"].map(s=>`<option value="${s}" ${s===c.status?"selected":""}>${s}</option>`).join("")}
+      </select></td>
+      <td class="p-3 whitespace-nowrap">${new Date(c.createdAt).toLocaleString("en-IN")}</td>
+    </tr>
+  `).join("");
+
+  document.querySelectorAll(".contact-status").forEach(s => s.onchange = async () => {
+    try { await api(`/admin/contacts/${s.dataset.id}/status`, {method:"PATCH",body:JSON.stringify({status:s.value})}); await Promise.all([loadDashboard(),loadContacts()]); }
+    catch(e) { alert(e.message); }
+  });
+}
+
+function csvCell(value) {
+  return `"${String(value ?? "").replace(/"/g,'""')}"`;
+}
+
+async function exportCsv() {
+  const r = await api(bookingQuery(1).replace("limit=20","limit=100"));
+  const rows = r.data.items;
+  const header = ["Reference","Name","Email","Phone","Course","Plan","Plan Price","Amount Paid","Payment Status","Booking Status","Created At","Paid At"];
+  const lines = [
+    header.map(csvCell).join(","),
+    ...rows.map(b => [
+      b.bookingReference,b.fullName,b.email,b.phone,b.coursePlan.course.name,b.coursePlan.name,
+      Number(b.coursePlan.price),Number(b.amountPaid||0),b.paymentStatus,b.status,
+      new Date(b.createdAt).toISOString(),b.paidAt ? new Date(b.paidAt).toISOString() : ""
+    ].map(csvCell).join(","))
+  ];
+  const blob = new Blob(["\ufeff"+lines.join("\n")], {type:"text/csv;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href=url; a.download=`revital-yoga-bookings-${new Date().toISOString().slice(0,10)}.csv`; a.click();
+  URL.revokeObjectURL(url);
+}
+
+$("filterBookings").onclick = () => loadBookings(1);
+$("refreshAll").onclick = loadAll;
+$("exportCsv").onclick = exportCsv;
+$("filterContacts").onclick = loadContacts;
+
+async function loadAll() {
+  try { await Promise.all([loadDashboard(),loadBookings(1),loadContacts()]); }
+  catch(e) { console.error(e); }
+}
+
+if (token && admin) showApp();
+</script>
+</body>
+</html>

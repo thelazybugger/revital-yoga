@@ -154,7 +154,7 @@
         </div>
 
         <div class="border border-violet-200 rounded-2xl p-6 md:p-8 w-full max-w-[470px] mx-auto md:ml-auto md:mr-0">
-        <form id="registrationForm" class="flex flex-col space-y-6" onsubmit="event.preventDefault(); handleSubmit();">
+        <form id="registrationForm" class="flex flex-col space-y-6" onsubmit="handleSubmit(event);">
         
             <!-- Full Name -->
             <div class="flex flex-col space-y-2">
@@ -297,7 +297,9 @@
         </main>
         
         <script>
-            // Helper Function for Custom Dropdown setup
+            // Backend API
+            const API_BASE_URL = "http://localhost:5000/api";
+
             function setupDropdown(containerId, btnId, menuId, arrowId, selectedId, inputId, optionClass) {
                 const container = document.getElementById(containerId);
                 const btn = document.getElementById(btnId);
@@ -305,123 +307,209 @@
                 const arrow = document.getElementById(arrowId);
                 const selectedText = document.getElementById(selectedId);
                 const hiddenInput = document.getElementById(inputId);
-                const options = container.querySelectorAll('.' + optionClass);
 
-                // Toggle Dropdown menu
-                btn.addEventListener('click', (e) => {
+                if (!container || !btn || !menu || !arrow || !selectedText || !hiddenInput) {
+                    return;
+                }
+
+                const options = container.querySelectorAll("." + optionClass);
+
+                btn.addEventListener("click", (e) => {
                     e.stopPropagation();
                     closeAllDropdowns(menuId);
-                    const isHidden = menu.classList.contains('hidden');
+                    const isHidden = menu.classList.contains("hidden");
+
                     if (isHidden) {
-                        menu.classList.remove('hidden');
-                        arrow.classList.add('rotate-180');
-                        btn.classList.add('border-violet-400', 'ring-2', 'ring-violet-400/20');
+                        menu.classList.remove("hidden");
+                        arrow.classList.add("rotate-180");
+                        btn.classList.add("border-violet-400", "ring-2", "ring-violet-400/20");
                     } else {
-                        menu.classList.add('hidden');
-                        arrow.classList.remove('rotate-180');
-                        btn.classList.remove('border-violet-400', 'ring-2', 'ring-violet-400/20');
+                        menu.classList.add("hidden");
+                        arrow.classList.remove("rotate-180");
+                        btn.classList.remove("border-violet-400", "ring-2", "ring-violet-400/20");
                     }
                 });
 
-                // Option selection handling
-                options.forEach(option => {
-                    option.addEventListener('click', (e) => {
+                options.forEach((option) => {
+                    option.addEventListener("click", (e) => {
                         e.stopPropagation();
-                        const val = option.getAttribute('data-value');
-                        const text = option.textContent.trim();
 
-                        selectedText.textContent = text;
-                        selectedText.classList.remove('text-zinc-400');
-                        selectedText.classList.add('text-zinc-900', 'font-medium');
+                        const val = option.getAttribute("data-value");
+                        selectedText.textContent = option.textContent.trim();
+                        selectedText.classList.remove("text-zinc-400");
+                        selectedText.classList.add("text-zinc-900", "font-medium");
                         hiddenInput.value = val;
 
-                        // Update option styling highlights
-                        options.forEach(opt => {
-                            opt.classList.remove('bg-violet-600', 'text-white', 'border-violet-600');
-                            opt.classList.add('bg-white', 'text-zinc-800', 'border-violet-100');
+                        options.forEach((opt) => {
+                            opt.classList.remove("bg-violet-600", "text-white", "border-violet-600");
+                            opt.classList.add("bg-white", "text-zinc-800", "border-violet-100");
                         });
-                        option.classList.remove('bg-white', 'text-zinc-800', 'border-violet-100', 'hover:bg-violet-50');
-                        option.classList.add('bg-violet-600', 'text-white', 'border-violet-600');
 
-                        // Close dropdown menu
-                        menu.classList.add('hidden');
-                        arrow.classList.remove('rotate-180');
-                        btn.classList.remove('border-violet-400', 'ring-2', 'ring-violet-400/20');
+                        option.classList.remove(
+                            "bg-white", "text-zinc-800", "border-violet-100", "hover:bg-violet-50"
+                        );
+                        option.classList.add("bg-violet-600", "text-white", "border-violet-600");
+
+                        menu.classList.add("hidden");
+                        arrow.classList.remove("rotate-180");
+                        btn.classList.remove("border-violet-400", "ring-2", "ring-violet-400/20");
                     });
                 });
             }
 
-            // Close all open dropdowns except target
             function closeAllDropdowns(exceptMenuId = null) {
-                const dropdowns = [
-                    { menu: 'genderMenu', arrow: 'genderArrow', btn: 'genderBtn' },
-                    { menu: 'purposeMenu', arrow: 'purposeArrow', btn: 'purposeBtn' }
-                ];
+                const menu = document.getElementById("genderMenu");
+                const arrow = document.getElementById("genderArrow");
+                const btn = document.getElementById("genderBtn");
 
-                dropdowns.forEach(item => {
-                    if (item.menu !== exceptMenuId) {
-                        const menuEl = document.getElementById(item.menu);
-                        const arrowEl = document.getElementById(item.arrow);
-                        const btnEl = document.getElementById(item.btn);
-                        if (menuEl) menuEl.classList.add('hidden');
-                        if (arrowEl) arrowEl.classList.remove('rotate-180');
-                        if (btnEl) btnEl.classList.remove('border-violet-400', 'ring-2', 'ring-violet-400/20');
-                    }
-                });
-            }
-
-            // Initialize Custom Dropdowns
-            setupDropdown(
-                'genderDropdownContainer', 'genderBtn', 'genderMenu', 'genderArrow',
-                'genderSelected', 'genderInput', 'gender-option'
-            );
-
-            setupDropdown(
-                'purposeDropdownContainer', 'purposeBtn', 'purposeMenu', 'purposeArrow',
-                'purposeSelected', 'purposeInput', 'purpose-option'
-            );
-
-            // Close dropdown menus when clicking outside
-            document.addEventListener('click', () => {
-                closeAllDropdowns();
-            });
-
-            // Toggle custom agreement checkbox state
-            let isAgreed = false;
-            function toggleCheckbox() {
-                isAgreed = !isAgreed;
-                const box = document.getElementById('customCheckbox');
-                const check = document.getElementById('checkIcon');
-                if (isAgreed) {
-                    box.classList.remove('bg-white', 'border-violet-300');
-                    box.classList.add('bg-violet-600', 'border-violet-600');
-                    check.classList.remove('hidden');
-                } else {
-                    box.classList.add('bg-white', 'border-violet-300');
-                    box.classList.remove('bg-violet-600', 'border-violet-600');
-                    check.classList.add('hidden');
+                if ("genderMenu" !== exceptMenuId) {
+                    if (menu) menu.classList.add("hidden");
+                    if (arrow) arrow.classList.remove("rotate-180");
+                    if (btn) btn.classList.remove("border-violet-400", "ring-2", "ring-violet-400/20");
                 }
             }
 
-            // Form Submission handler
-            function handleSubmit() {
-                const genderVal = document.getElementById('genderInput').value;
-                const purposeVal = document.getElementById('purposeInput').value;
+            setupDropdown(
+                "genderDropdownContainer",
+                "genderBtn",
+                "genderMenu",
+                "genderArrow",
+                "genderSelected",
+                "genderInput",
+                "gender-option"
+            );
+
+            document.addEventListener("click", () => {
+                closeAllDropdowns();
+            });
+
+            async function handleSubmit(event) {
+                event.preventDefault();
+
+                const form = document.getElementById("registrationForm");
+                const genderVal = document.getElementById("genderInput").value;
+                const purposeVal = form.querySelector('input[name="purpose"]:checked')?.value;
+                const termsAccepted = form.querySelector('input[name="terms"]')?.checked;
 
                 if (!genderVal) {
                     alert("Please select a gender option.");
                     return;
                 }
+
                 if (!purposeVal) {
                     alert("Please select your purpose of joining.");
                     return;
                 }
 
-                const toast = document.getElementById('toastMessage');
-                const toastText = document.getElementById('toastText');
-                toastText.textContent = "Thank you! Your registration form has been submitted.";
-                toast.classList.remove('hidden');
-                toast.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                if (!termsAccepted) {
+                    alert("Please agree to the Terms of Service and Privacy Policy.");
+                    return;
+                }
+
+                const submitButton = form.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton?.textContent || "Submit Application";
+                const formData = new FormData(form);
+
+                const fullName = formData.get("fullName")?.toString().trim();
+                const email = formData.get("email")?.toString().trim();
+                const phone = formData.get("phone")?.toString().trim();
+                const age = formData.get("age")?.toString().trim();
+                const message = formData.get("message")?.toString().trim();
+
+                // This form does not currently select a specific course/plan,
+                // so it is submitted as a contact/registration enquiry.
+                const formattedMessage = `
+Registration Enquiry
+
+Age: ${age}
+Gender: ${genderVal}
+Purpose: ${purposeVal}
+
+Message:
+${message || "No additional message provided."}
+                `.trim();
+
+                const data = {
+                    name: fullName,
+                    email,
+                    phone,
+                    subject: "Website Registration Enquiry",
+                    message: formattedMessage
+                };
+
+                try {
+                    if (submitButton) {
+                        submitButton.disabled = true;
+                        submitButton.textContent = "Submitting...";
+                        submitButton.classList.add("opacity-70", "cursor-not-allowed");
+                    }
+
+                    const response = await fetch(`${API_BASE_URL}/contact`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    const result = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(
+                            result.message || "Unable to submit your application. Please try again."
+                        );
+                    }
+
+                    const toast = document.getElementById("toastMessage");
+                    const toastText = document.getElementById("toastText");
+
+                    if (toast && toastText) {
+                        toastText.textContent =
+                            "Thank you! Your registration form has been submitted.";
+                        toast.classList.remove("hidden");
+                        toast.scrollIntoView({
+                            behavior: "smooth",
+                            block: "nearest"
+                        });
+                    } else {
+                        alert(
+                            result.message ||
+                            "Thank you! Your registration form has been submitted."
+                        );
+                    }
+
+                    form.reset();
+
+                    const genderSelected = document.getElementById("genderSelected");
+                    const genderInput = document.getElementById("genderInput");
+
+                    if (genderSelected) {
+                        genderSelected.textContent = "Select gender";
+                        genderSelected.classList.add("text-zinc-400");
+                        genderSelected.classList.remove("text-zinc-900", "font-medium");
+                    }
+
+                    if (genderInput) {
+                        genderInput.value = "";
+                    }
+
+                    document.querySelectorAll(".gender-option").forEach((option) => {
+                        option.classList.remove("bg-violet-600", "text-white", "border-violet-600");
+                        option.classList.add("bg-white", "text-zinc-800", "border-violet-100");
+                    });
+                } catch (error) {
+                    console.error("Registration form error:", error);
+                    alert(
+                        error.message ||
+                        "Unable to submit your application. Please try again."
+                    );
+                } finally {
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalButtonText;
+                        submitButton.classList.remove("opacity-70", "cursor-not-allowed");
+                    }
+                }
             }
         </script>
         
