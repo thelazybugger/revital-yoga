@@ -13,24 +13,37 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
+<link rel="stylesheet" href="revital-theme.css">
 </head>
 
 <body
     class="bg-sand-50 text-slate-800 antialiased selection:bg-sage-200 selection:text-sage-900 min-h-screen flex flex-col justify-between">
 
     <!-- Header Block -->
-    <nav class="sticky top-0 z-50 flex w-full items-center justify-between px-4 py-3.5 backdrop-blur-md md:px-16 lg:px-24"
-        x-data="{ mobileMenuOpen: false }">
-        <a href="/">
-            <img src="logo.png" alt="logo" class="item-center h-9 w-auto" width="205" height="80" />
-        </a>
+    
+<nav class="rv-nav sticky top-0 z-50 px-4 py-3.5 md:px-8 lg:px-12">
+  <div class="rv-nav-inner">
+    <a href="index.html" aria-label="Revital Yoga home">
+      <img src="logo.png" alt="Revital Yoga" class="rv-logo" width="205" height="80">
+    </a>
+    <div class="rv-nav-links">
+      <a href="cources_payment.html" class="active">Classes</a>
+      <a href="about.html" class="">About Us</a>
+      <a href="contactus.html" class="">Contact</a>
+      <a href="cources_payment.html" class="rv-nav-cta">Book a Session</a>
+    </div>
+    <button class="rv-menu-btn" id="rvMenuBtn" aria-label="Open menu" aria-expanded="false">
+      <i data-lucide="menu"></i>
+    </button>
+  </div>
+  <div class="rv-mobile-menu" id="rvMobileMenu">
+    <a href="cources_payment.html">Classes</a>
+    <a href="about.html">About Us</a>
+    <a href="contactus.html">Contact</a>
+    <a href="cources_payment.html" class="rv-nav-cta">Book a Session</a>
+  </div>
+</nav>
 
-        <div class="hidden md:flex items-center space-x-8">
-            <a href="cources.html" class="text-black hover:text-black font-medium transition-colors">Classes</a>
-            <a href="about.html" class="text-black hover:text-black font-medium transition-colors">About Us</a>
-            <a href="contactus.html" class="text-black hover:text-black font-medium transition-colors">Contact</a>
-        </div>
-    </nav>
 
     <style>
         [x-cloak] {
@@ -46,11 +59,24 @@
         }
     </style>
 
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+
+
+<section class="rv-page-hero">
+  <div class="rv-hero-inner">
+    <span class="rv-kicker"><i data-lucide="leaf" class="w-4 h-4"></i> Yoga • Healing • Well-being</span>
+    <h1>Choose a practice that fits your journey.</h1>
+    <p>Explore guided yoga, healing sessions and personalised support designed to help you build a calmer, healthier routine.</p>
+    <div class="rv-hero-actions">
+      <a href="#programs" class="rv-primary-btn">Explore Programs <i data-lucide="arrow-down" class="w-4 h-4"></i></a>
+      <a href="contactus.html" class="rv-secondary-btn">Talk to Us <i data-lucide="message-circle" class="w-4 h-4"></i></a>
+    </div>
+  </div>
+</section>
 
     <!-- Main Content Area -->
     <main class="py-12 md:py-20 flex-grow">
-        <div class="max-w-6xl mx-auto px-6">
+        <div id="programs" class="max-w-6xl mx-auto px-6">
 
             <!-- Intro Callout Box -->
             <div
@@ -687,6 +713,23 @@
 
         lucide.createIcons();
     </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("rvMenuBtn");
+  const menu = document.getElementById("rvMobileMenu");
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      const open = menu.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+      btn.innerHTML = open ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+      if (window.lucide) lucide.createIcons();
+    });
+    menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.remove("open")));
+  }
+});
+</script>
+
 </body>
 
 </html>

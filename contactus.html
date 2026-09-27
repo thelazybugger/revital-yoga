@@ -3,28 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact - Revital Yoga and Healing Centre</title>
     <link rel="stylesheet" href="./output.css" />
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
+<link rel="stylesheet" href="revital-theme.css">
 </head>
 <body>
 
-    <nav class="sticky top-0 z-50 flex w-full items-center justify-between px-4 py-3.5 backdrop-blur-md md:px-16  lg:px-24 "
-        x-data="{ mobileMenuOpen: false }">
-        <a href="/">
-            <img src="logo.png" alt="logo" class="item-center h-9 w-auto" width="205" height="80" />
-        </a>
     
-        <div class="hidden md:flex items-center space-x-8">
-            <a href="cources.html" class="text-black hover:text-black font-medium transition-colors">Classes</a>
-            <a href="about.html" class="text-black hover:text-black font-medium transition-colors">About Us</a>
-            <a href="contactus.html" class="text-black hover:text-black font-medium transition-colors">Contact</a>
-    
-        </div>
-    
-    
-    
-    </nav>
+<nav class="rv-nav sticky top-0 z-50 px-4 py-3.5 md:px-8 lg:px-12">
+  <div class="rv-nav-inner">
+    <a href="index.html" aria-label="Revital Yoga home">
+      <img src="logo.png" alt="Revital Yoga" class="rv-logo" width="205" height="80">
+    </a>
+    <div class="rv-nav-links">
+      <a href="cources_payment.html" class="">Classes</a>
+      <a href="about.html" class="">About Us</a>
+      <a href="contactus.html" class="active">Contact</a>
+      <a href="cources_payment.html" class="rv-nav-cta">Book a Session</a>
+    </div>
+    <button class="rv-menu-btn" id="rvMenuBtn" aria-label="Open menu" aria-expanded="false">
+      <i data-lucide="menu"></i>
+    </button>
+  </div>
+  <div class="rv-mobile-menu" id="rvMobileMenu">
+    <a href="cources_payment.html">Classes</a>
+    <a href="about.html">About Us</a>
+    <a href="contactus.html">Contact</a>
+    <a href="cources_payment.html" class="rv-nav-cta">Book a Session</a>
+  </div>
+</nav>
+
     
     <style>
         [x-cloak] {
@@ -36,29 +45,23 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     
     
-    <section id="home" class="relative overflow-hidden"></section>
- 
-  
+    
 
 
-<style>
-    [x-cloak] {
-        display: none !important;
-    }
-</style>
+<section class="rv-page-hero">
+  <div class="rv-hero-inner">
+    <span class="rv-kicker"><i data-lucide="heart-handshake" class="w-4 h-4"></i> We’re here to help</span>
+    <h1>Let’s start a conversation.</h1>
+    <p>Have a question about classes, healing sessions or finding the right program? Reach out and the Revital Yoga team will get back to you.</p>
+  </div>
+</section>
 
+<div class="flex items-center justify-center px-4 py-16">
+    <div class="rv-contact-shell w-full grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
 
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-
-<section id="home" class="relative overflow-hidden"></section>
-
-<div class="flex items-center justify-center px-4 py-20">
-    <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
-
-        <div class="flex flex-col items-start text-left">
+        <div class="rv-contact-panel rv-contact-info p-7 md:p-9 flex flex-col items-start text-left">
             <div
-                class="inline-flex items-center justify-center border border-violet-200 bg-violet-50 rounded-full px-4 py-1.5 text-sm text-zinc-800 mb-4">
+                class="inline-flex items-center justify-center border border-rv bg-rv rounded-full px-4 py-1.5 text-sm text-zinc-800 mb-4">
                 Contact us
             </div>
             <h1 class="text-[40px] font-medium text-zinc-900 leading-tight mb-1.5">
@@ -70,7 +73,7 @@
 
             <div class="flex flex-col space-y-5">
                 <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
+                    <div class="size-9 rounded-full bg-rv flex items-center justify-center shrink-0">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="m18.333 5.836-7.492 4.772a1.67 1.67 0 0 1-1.674 0l-7.5-4.772" stroke="#71717b"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -79,35 +82,35 @@
                                 stroke="#71717b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                <a href="mailto:revitalyoga75@gmail.com" class="hover:text-violet-500 transition">revitalyoga75@gmail.com</a>
+                <a href="mailto:revitalyoga75@gmail.com" class="rv-contact-link">revitalyoga75@gmail.com</a>
                 </div>
 
 
                 <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
+                    <div class="size-9 rounded-full bg-rv flex items-center justify-center shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 71 72" fill="none">
                         <path
                             d="M46.4233 38.6403L47.7279 30.3588H39.6917V24.9759C39.6917 22.7114 40.8137 20.4987 44.4013 20.4987H48.1063V13.4465C45.9486 13.1028 43.7685 12.9168 41.5834 12.8901C34.9692 12.8901 30.651 16.8626 30.651 24.0442V30.3588H23.3193V38.6403H30.651V58.671H39.6917V38.6403H46.4233Z"
                             fill="#71717B" />
                     </svg>
                     </div>
-                    <a href="https://www.facebook.com/priya.wadhwani.9081323" class="hover:text-violet-500 transition" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href="https://www.facebook.com/priya.wadhwani.9081323" class="rv-contact-link" target="_blank" rel="noopener noreferrer">Facebook</a>
                 </div>
 
                 <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
+                    <div class="size-9 rounded-full bg-rv flex items-center justify-center shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#71717B" class="bi bi-youtube"
                         viewBox="0 0 16 16">
                         <path
                             d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
                     </svg>
                     </div>
-                    <a href="https://youtube.com/@priyawadhwani5724?si=_MzQHZZOifCQoAAq " class="hover:text-violet-500 transition" target="_blank"
+                    <a href="https://youtube.com/@priyawadhwani5724?si=_MzQHZZOifCQoAAq " class="rv-contact-link" target="_blank"
                         rel="noopener noreferrer">YouTube</a>
                 </div>
 
                 <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
+                    <div class="size-9 rounded-full bg-rv flex items-center justify-center shrink-0">
                     <svg class="w-6 h-6 fill-current text-pink-600 hover:text-pink-700"  fill="#71717B" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 448 512">
                         <path
@@ -116,13 +119,13 @@
                     </svg>
 
                     </div>
-                    <a href="https://www.instagram.com/revital_yoga?stkn=cmJscXJwbGFibzl0" class="hover:text-violet-500 transition" target="_blank"
+                    <a href="https://www.instagram.com/revital_yoga?stkn=cmJscXJwbGFibzl0" class="rv-contact-link" target="_blank"
                         rel="noopener noreferrer">Instagram</a>
                 </div>
 
 
                 <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
+                    <div class="size-9 rounded-full bg-rv flex items-center justify-center shrink-0">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#a)">
                                 <path
@@ -136,10 +139,10 @@
                             </defs>
                         </svg>
                     </div>
-<a href="tel:+91 8770887765" class="hover:text-violet-500 transition">+91 8770887765</a>                </div>
+<a href="tel:+91 8770887765" class="rv-contact-link">+91 8770887765</a>                </div>
 
                 <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
+                    <div class="size-9 rounded-full bg-rv flex items-center justify-center shrink-0">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M16.667 8.33c0 4.162-4.616 8.495-6.166 9.833a.83.83 0 0 1-1.002 0c-1.55-1.338-6.166-5.671-6.166-9.832a6.667 6.667 0 0 1 13.334 0"
@@ -153,49 +156,49 @@
             </div>
         </div>
 
-        <div class="border border-violet-200 rounded-2xl p-6 md:p-8 w-full max-w-[470px] mx-auto md:ml-auto md:mr-0">
-        <form id="registrationForm" class="flex flex-col space-y-6" onsubmit="handleSubmit(event);">
+        <div class="rv-contact-panel rv-contact-form p-6 md:p-8 w-full max-w-[520px] mx-auto md:ml-auto md:mr-0">
+        <form id="registrationForm" class="rv-registration-form flex flex-col space-y-6" onsubmit="handleSubmit(event);">
         
             <!-- Full Name -->
-            <div class="flex flex-col space-y-2">
+            <div class="rv-form-group">
                 <label for="fullName" class="text-sm font-medium text-zinc-700">Full Name <span
-                        class="text-violet-500">*</span></label>
+                        class="rv-required">*</span></label>
                 <input required type="text" id="fullName" name="fullName" placeholder="Enter your name"
-                    class="w-full rounded-full border border-violet-200 px-5 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all" />
+                    class="w-full rounded-full border  px-5 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none  focus:ring-2  transition-all" />
             </div>
         
             <!-- Email Address -->
-            <div class="flex flex-col space-y-2">
+            <div class="rv-form-group">
                 <label for="email" class="text-sm font-medium text-zinc-700">Email address<span
-                        class="text-violet-500">*</span></label>
+                        class="rv-required">*</span></label>
                 <input required type="email" id="email" name="email" placeholder="Enter your email"
-                    class="w-full rounded-full border border-violet-200 px-5 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all" />
+                    class="w-full rounded-full border  px-5 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none  focus:ring-2  transition-all" />
             </div>
 
             <!-- Phone Number -->
-            <div class="flex flex-col space-y-2">
+            <div class="rv-form-group">
                 <label for="phone" class="text-sm font-medium text-zinc-700">Phone Number <span
-                        class="text-violet-500">*</span></label>
+                        class="rv-required">*</span></label>
                 <input required type="tel" id="phone" name="phone" placeholder="Enter your phone number"
-                    class="w-full rounded-full border border-violet-200 px-5 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all" />
+                    class="w-full rounded-full border  px-5 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none  focus:ring-2  transition-all" />
             </div>
         
             <!-- Age & Gender Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="rv-form-row grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <!-- Age Input -->
-                <div class="flex flex-col space-y-2">
+                <div class="rv-form-group">
                     <label for="age" class="text-sm font-medium text-zinc-700">Age<span
-                            class="text-violet-500">*</span></label>
+                            class="rv-required">*</span></label>
                     <input required type="number" id="age" name="age" min="1" max="120" placeholder="Enter your age"
-                        class="w-full rounded-full border border-violet-200 px-5 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all" />
+                        class="w-full rounded-full border  px-5 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none  focus:ring-2  transition-all" />
                 </div>
         
                 <!-- Custom Gender Dropdown -->
-                <div class="flex flex-col space-y-2 relative" id="genderDropdownContainer">
-                    <label for="gender" class="text-sm font-medium text-zinc-700">Gender<span class="text-violet-500">*</span></label>
+                <div class="rv-form-group relative" id="genderDropdownContainer">
+                    <label for="gender" class="text-sm font-medium text-zinc-700">Gender<span class="rv-required">*</span></label>
         
                     <button type="button" id="genderBtn"
-                        class="w-full flex items-center justify-between rounded-full border border-violet-200 bg-white px-5 py-3 text-sm text-zinc-900 focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all">
+                        class="w-full flex items-center justify-between rounded-full border  bg-white px-5 py-3 text-sm text-zinc-900 focus:outline-none  focus:ring-2  transition-all">
                         <span id="genderSelected" class="text-zinc-400">Select gender</span>
                         <svg id="genderArrow" class="h-4 w-4 text-zinc-400 transition-transform duration-200 shrink-0 ml-2"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -206,91 +209,73 @@
         
                     <!-- Custom Dropdown Menu with Rounded Option Pills -->
                     <div id="genderMenu"
-                        class="hidden absolute top-[calc(100%+6px)] left-0 right-0 z-30 flex flex-col gap-1.5 rounded-2xl border border-violet-200 bg-white p-2 shadow-xl shadow-violet-100 max-h-56 overflow-y-auto">
+                        class="hidden absolute top-[calc(100%+6px)] left-0 right-0 z-30 flex flex-col gap-1.5 rounded-2xl border  bg-white p-2 shadow-xl  max-h-56 overflow-y-auto">
                         <div data-value="male"
-                            class="gender-option cursor-pointer rounded-full border border-violet-100 bg-white px-4 py-2 text-sm text-zinc-800 hover:bg-violet-50 hover:border-violet-300 transition-colors">
+                            class="gender-option cursor-pointer rounded-full border border-rv bg-white px-4 py-2 text-sm text-zinc-800 hover:bg-rv  transition-colors">
                             Male</div>
                         <div data-value="female"
-                            class="gender-option cursor-pointer rounded-full border border-violet-100 bg-white px-4 py-2 text-sm text-zinc-800 hover:bg-violet-50 hover:border-violet-300 transition-colors">
+                            class="gender-option cursor-pointer rounded-full border border-rv bg-white px-4 py-2 text-sm text-zinc-800 hover:bg-rv  transition-colors">
                             Female</div>
                         <div data-value="non-binary"
-                            class="gender-option cursor-pointer rounded-full border border-violet-100 bg-white px-4 py-2 text-sm text-zinc-800 hover:bg-violet-50 hover:border-violet-300 transition-colors">
+                            class="gender-option cursor-pointer rounded-full border border-rv bg-white px-4 py-2 text-sm text-zinc-800 hover:bg-rv  transition-colors">
                             Non-binary</div>
                         <div data-value="prefer-not-to-say"
-                            class="gender-option cursor-pointer rounded-full border border-violet-100 bg-white px-4 py-2 text-sm text-zinc-800 hover:bg-violet-50 hover:border-violet-300 transition-colors">
+                            class="gender-option cursor-pointer rounded-full border border-rv bg-white px-4 py-2 text-sm text-zinc-800 hover:bg-rv  transition-colors">
                             Prefer not to say</div>
                     </div>
                 </div>
             </div>
         
         <!-- Purpose of Joining Radio Pills Group -->
-        <div class="flex flex-col space-y-2">
-            <label class="text-sm font-medium text-zinc-700">
-                Choose<span class="text-violet-500">*</span>
-            </label>
-        
-            <div class="flex flex-wrap gap-2 pt-1">
-                <!-- Radio Option: Yoga -->
-                <label class="relative cursor-pointer">
-                    <input type="radio" name="purpose" value="Yoga" class="peer sr-only" required />
-                    <div
-                        class="rounded-full border border-violet-100 bg-white px-5 py-2.5 text-sm text-zinc-800 transition-all peer-checked:border-violet-500 peer-checked:bg-violet-500 peer-checked:text-white peer-checked:shadow-sm hover:border-violet-300">
-                        Yoga
-                    </div>
-                </label>
-        
-                <!-- Radio Option: Healing -->
-                <label class="relative cursor-pointer">
-                    <input type="radio" name="purpose" value="Healing" class="peer sr-only" />
-                    <div
-                        class="rounded-full border border-violet-100 bg-white px-5 py-2.5 text-sm text-zinc-800 transition-all peer-checked:border-violet-500 peer-checked:bg-violet-500 peer-checked:text-white peer-checked:shadow-sm hover:border-violet-300">
-                        Healing
-                    </div>
-                </label>
+        <div class="rv-purpose-group">
+            <div class="rv-field-label">
+                <span>Choose<span class="rv-required">*</span></span>
+            </div>
 
-                <!-- Radio Option: Both -->
-                <label class="relative cursor-pointer">
-                    <input type="radio" name="purpose" value="Both" class="peer sr-only" />
-                    <div
-                        class="rounded-full border border-violet-100 bg-white px-5 py-2.5 text-sm text-zinc-800 transition-all peer-checked:border-violet-500 peer-checked:bg-violet-500 peer-checked:text-white peer-checked:shadow-sm hover:border-violet-300">
-                        Both
-                    </div>
+            <div class="rv-purpose-options">
+                <label class="rv-purpose-option">
+                    <input type="radio" name="purpose" value="Yoga" class="rv-purpose-radio" required />
+                    <span class="rv-purpose-pill">Yoga</span>
+                </label>
+                <label class="rv-purpose-option">
+                    <input type="radio" name="purpose" value="Healing" class="rv-purpose-radio" />
+                    <span class="rv-purpose-pill">Healing</span>
+                </label>
+                <label class="rv-purpose-option">
+                    <input type="radio" name="purpose" value="Both" class="rv-purpose-radio" />
+                    <span class="rv-purpose-pill">Both</span>
                 </label>
             </div>
         </div>
-        
-            <!-- Message Field -->
-            <div class="flex flex-col space-y-2">
-                <label for="message" class="text-sm font-medium text-zinc-700">Your Purpose to join?</label>
-                <span class="text-violet-500">Optional</span>
+
+        <!-- Message Field -->
+            <div class="rv-message-group flex flex-col space-y-2">
+                <div class="rv-message-label-row">
+                    <label for="message" class="text-sm font-medium text-zinc-700">Your Purpose to join?</label>
+                    <span class="rv-optional">Optional</span>
+                </div>
                 <textarea id="message" name="message" placeholder="Enter your message..."
-                    class="w-full rounded-2xl border border-violet-200 px-5 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 h-28 resize-none transition-all"></textarea>
+                    class="w-full rounded-2xl border  px-5 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none  focus:ring-2  h-28 resize-none transition-all"></textarea>
             </div>
         
             <!-- Terms Checkbox Toggle -->
         <label class="flex items-center gap-3 cursor-pointer select-none py-1 group">
             <!-- Hidden actual checkbox -->
-            <input type="checkbox" name="terms" required class="peer sr-only" />
+            <input type="checkbox" name="terms" required class="rv-terms-checkbox" />
         
             <!-- Styled Checkbox Box -->
-            <div
-                class="size-5 rounded-md border border-violet-300 shrink-0 flex items-center justify-center transition-all bg-white peer-checked:bg-violet-600 peer-checked:border-violet-600 peer-focus-visible:ring-2 peer-focus-visible:ring-violet-400">
-                <svg class="w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 transition-opacity" fill="none"
-                    stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
-                </svg>
-            </div>
+            <span class="rv-terms-checkmark" aria-hidden="true"></span>
         
             <!-- Label Text -->
             <span class="text-sm text-zinc-600">
-                I agree to the <a href="#" class="text-violet-600 hover:underline">Terms of Service</a> & <a href="#"
-                    class="text-violet-600 hover:underline">Privacy Policy</a>
+                I agree to the <a href="terms.html" class="rv-contact-link">Terms of Service</a> & <a href="privecypolicy.html"
+                    class="rv-contact-link">Privacy Policy</a>
             </span>
         </label>
         
             <!-- Submit Button -->
             <button type="submit"
-                class="w-full flex items-center justify-center gap-2 mt-4 hover:opacity-90 active:scale-[0.99] transition-all duration-200 py-3.5 px-8 rounded-full text-white font-medium bg-gradient-to-r from-violet-600 to-indigo-600 shadow-lg shadow-violet-300/50 hover:shadow-violet-400/60 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
+                class="rv-submit-btn w-full flex items-center justify-center gap-2 mt-4 hover:opacity-90 active:scale-[0.99] transition-all duration-200 py-3.5 px-8 rounded-full text-white font-medium bg-gradient-to-r   shadow-lg   focus:outline-none focus:ring-2  focus:ring-offset-2">
                 Submit Application
             </button>
         </form>
@@ -322,11 +307,11 @@
                     if (isHidden) {
                         menu.classList.remove("hidden");
                         arrow.classList.add("rotate-180");
-                        btn.classList.add("border-violet-400", "ring-2", "ring-violet-400/20");
+                        btn.classList.add("rv-dropdown-open");
                     } else {
                         menu.classList.add("hidden");
                         arrow.classList.remove("rotate-180");
-                        btn.classList.remove("border-violet-400", "ring-2", "ring-violet-400/20");
+                        btn.classList.remove("rv-dropdown-open");
                     }
                 });
 
@@ -341,18 +326,18 @@
                         hiddenInput.value = val;
 
                         options.forEach((opt) => {
-                            opt.classList.remove("bg-violet-600", "text-white", "border-violet-600");
-                            opt.classList.add("bg-white", "text-zinc-800", "border-violet-100");
+                            opt.classList.remove("bg-rv", "text-white", "border-rv");
+                            opt.classList.add("bg-white", "text-zinc-800", "border-rv");
                         });
 
                         option.classList.remove(
-                            "bg-white", "text-zinc-800", "border-violet-100", "hover:bg-violet-50"
+                            "bg-white", "text-zinc-800", "border-rv", "hover:bg-rv"
                         );
-                        option.classList.add("bg-violet-600", "text-white", "border-violet-600");
+                        option.classList.add("bg-rv", "text-white", "border-rv");
 
                         menu.classList.add("hidden");
                         arrow.classList.remove("rotate-180");
-                        btn.classList.remove("border-violet-400", "ring-2", "ring-violet-400/20");
+                        btn.classList.remove("rv-dropdown-open");
                     });
                 });
             }
@@ -365,7 +350,7 @@
                 if ("genderMenu" !== exceptMenuId) {
                     if (menu) menu.classList.add("hidden");
                     if (arrow) arrow.classList.remove("rotate-180");
-                    if (btn) btn.classList.remove("border-violet-400", "ring-2", "ring-violet-400/20");
+                    if (btn) btn.classList.remove("rv-dropdown-open");
                 }
             }
 
@@ -494,8 +479,8 @@ ${message || "No additional message provided."}
                     }
 
                     document.querySelectorAll(".gender-option").forEach((option) => {
-                        option.classList.remove("bg-violet-600", "text-white", "border-violet-600");
-                        option.classList.add("bg-white", "text-zinc-800", "border-violet-100");
+                        option.classList.remove("bg-rv", "text-white", "border-rv");
+                        option.classList.add("bg-white", "text-zinc-800", "border-rv");
                     });
                 } catch (error) {
                     console.error("Registration form error:", error);
@@ -533,5 +518,22 @@ ${message || "No additional message provided."}
         </div>
     </footer>
     <script src="/script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("rvMenuBtn");
+  const menu = document.getElementById("rvMobileMenu");
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      const open = menu.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+      btn.innerHTML = open ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+      if (window.lucide) lucide.createIcons();
+    });
+    menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.remove("open")));
+  }
+});
+</script>
+
 </body>
 </html>
