@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Revital Yoga and Healing Centre</title>
     <link rel="stylesheet" href="./output.css" />
-    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="icon" type="image/png" href="logo.png" />
 <link rel="stylesheet" href="revital-theme.css">
 </head>
 <body>
@@ -70,6 +70,9 @@
             <p class="text-sm text-zinc-600 max-w-[360px] mb-6 leading-relaxed">
             Need more information? Get in touch with us!
             </p>
+            <a data-calendly href="#" class="rv-secondary-btn" style="margin-bottom:24px">
+              Let&apos;s Connect <i data-lucide="calendar-days" class="w-4 h-4"></i>
+            </a>
 
             <div class="flex flex-col space-y-5">
                 <div class="flex items-center gap-2">
@@ -505,12 +508,12 @@ ${message || "No additional message provided."}
 
 
 
-    <footer class="border border-sand-50 py-8 bg-sand-100/40 text-xs text-slate-500">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+    <footer class="rv-footer">
+        <div class="rv-footer-inner">
             <div class="flex items-center gap-2">
                 <span>&copy; 2026 Revital Yoga and Healing Centre. All rights reserved.</span>
             </div>
-            <div class="flex gap-6">
+            <div class="rv-footer-links">
                 <a href="privecypolicy.html" class="hover:text-slate-800 transition-colors">Privacy Policy</a>
                 <a href="terms.html" class="hover:text-slate-800 transition-colors">Terms of Service</a>
                 <a href="contactus.html" class="hover:text-slate-800 transition-colors">Contact Support</a>
@@ -533,6 +536,22 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.remove("open")));
   }
 });
+</script>
+
+<script>
+  const CALENDLY_URL = 'PASTE_CLIENT_CALENDLY_URL_HERE';
+  document.querySelectorAll('[data-calendly]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      if (!CALENDLY_URL || CALENDLY_URL.includes('PASTE_CLIENT')) {
+        event.preventDefault();
+        alert('Calendly scheduling link will be available once the centre\'s Calendly URL is added.');
+        return;
+      }
+      link.href = CALENDLY_URL;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    });
+  });
 </script>
 
 </body>
