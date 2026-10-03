@@ -1,198 +1,543 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Revital Yoga and Healing Centre — yoga, pranayama, meditation and holistic healing practices for a healthier, more balanced life.">
+  <meta name="description"
+    content="Revital Yoga and Healing Centre — yoga, pranayama, meditation and holistic healing practices for a healthier, more balanced life.">
   <title>Revital Yoga and Healing Centre</title>
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Tailwind CSS CDN for Glassmorphic Slider Styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="revital-theme.css">
 </head>
+
 <body>
 
-<nav class="rv-nav sticky top-0 z-50 px-4 py-3.5 md:px-8 lg:px-12">
-  <div class="rv-nav-inner">
-    <a href="index.html" aria-label="Revital Yoga home">
-      <img src="logo.png" alt="Revital Yoga" class="rv-logo" width="205" height="80">
-    </a>
-    <div class="rv-nav-links">
+  <nav class="rv-nav sticky top-0 z-50 px-4 py-3.5 md:px-8 lg:px-12">
+    <div class="rv-nav-inner">
+      <a href="index.html" aria-label="Revital Yoga home">
+        <img src="logo.png" alt="Revital Yoga" class="rv-logo" width="205" height="80">
+      </a>
+      <div class="rv-nav-links">
+        <a href="cources_payment.html">Classes</a>
+        <a href="about.html">About Us</a>
+        <a href="contactus.html">Contact</a>
+        <a href="cources_payment.html" class="rv-nav-cta">Book a Session</a>
+      </div>
+      <button class="rv-menu-btn" id="rvMenuBtn" aria-label="Open menu" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+    <div class="rv-mobile-menu" id="rvMobileMenu">
       <a href="cources_payment.html">Classes</a>
       <a href="about.html">About Us</a>
       <a href="contactus.html">Contact</a>
       <a href="cources_payment.html" class="rv-nav-cta">Book a Session</a>
     </div>
-    <button class="rv-menu-btn" id="rvMenuBtn" aria-label="Open menu" aria-expanded="false">
-      <i data-lucide="menu"></i>
-    </button>
-  </div>
-  <div class="rv-mobile-menu" id="rvMobileMenu">
-    <a href="cources_payment.html">Classes</a>
-    <a href="about.html">About Us</a>
-    <a href="contactus.html">Contact</a>
-    <a href="cources_payment.html" class="rv-nav-cta">Book a Session</a>
-  </div>
-</nav>
+  </nav>
 
-<header class="rv-home-hero">
-  <div class="rv-home-inner">
-    <div class="rv-home-copy">
-      <span class="rv-kicker"><i data-lucide="sparkles" class="w-4 h-4"></i> Yoga • Healing • Well-being</span>
-      <h1>Come back to yourself.</h1>
-      <p>
-        A welcoming space for yoga, pranayama, meditation and holistic healing practices — created to help you slow down, reconnect and build a healthier everyday life.
+  <header class="rv-home-hero" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.411)), url('classroom.jpeg') center/cover no-repeat;">
+    <div class="rv-home-inner">
+      <div class="rv-home-copy">
+        <span class="rv-kicker"><i data-lucide="sparkles" class="w-4 h-4"></i> Yoga • Healing • Well-being</span>
+      <h1 style="color: #ffffff;">Come back to yourself.</h1>
+      <p class="rv-home-subtitle" style="color: rgba(255, 255, 255, 0.9);">
+        A welcoming space for yoga, pranayama, meditation and holistic healing practices — created to help you slow
+        down, reconnect and build a healthier everyday life.
       </p>
-      <div class="rv-hero-actions" style="justify-content:flex-start">
-        <a class="rv-primary-btn" href="cources_payment.html">Explore Our Programs <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        <a class="rv-secondary-btn" href="#founder">Meet the Founder</a>
+        <div class="rv-hero-actions" style="justify-content:flex-start">
+          <a class="rv-primary-btn" href="cources_payment.html">Explore Our Programs <i data-lucide="arrow-right"
+              class="w-4 h-4"></i></a>
+          <a class="rv-secondary-btn" href="#founder">Meet the Founder</a>
+        </div>
+      </div>
+
+     
+    </div>
+  </header>
+
+  <section class="rv-home-section" id="founder">
+    <div class="rv-founder-card">
+      <div class="rv-founder-photo">
+        <img src="Priya Wadhwani.jpeg" alt="Priya Wadhwani — Founder of Revital Yoga and Healing Centre" loading="lazy">
+      </div>
+      <div class="rv-founder-copy">
+        <span class="rv-section-number">FOUNDER &amp; WELLNESS GUIDE</span>
+        <h2>Meet Priya Wadhwani</h2>
+        <h3>Founder, Revital Yoga and Healing Centre</h3>
+        <p>
+          I, Priya Wadhwani, am the founder of Revital Yoga and Healing Centre. My journey as a yoga instructor with
+          this wellness centre began in January 2017. Over the years, I have gained deep and holistic experience with
+          yoga, pranayama, meditation and their impact on everyday life.
+        </p>
+        <p>
+          In 2020, I began exploring deeper dimensions of holistic health through Reiki healing, Ho'oponopono, gratitude
+          healing, EFT for emotional balance, Love Ponopono and various NLP-based techniques. These experiences helped
+          me understand how closely our health, energy, relationships, wealth and career are connected.
+        </p>
+        <p>
+          I have always wanted to help people overcome the challenges they face. With the grace of God, thousands of
+          people have connected with me and experienced meaningful changes in their health and energy levels. It is
+          always a privilege to help you and bring value to your life.
+        </p>
+        <div class="rv-founder-actions">
+          <a class="rv-primary-btn" href="about.html">Read My Full Journey <i data-lucide="arrow-right"
+              class="w-4 h-4"></i></a>
+          <a class="rv-secondary-btn" data-calendly href="#">Let's Connect <i data-lucide="calendar-days"
+              class="w-4 h-4"></i></a>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="rv-home-media">
-      <img src="Priya Wadhwani.jpeg" alt="Priya Wadhwani, founder of Revital Yoga and Healing Centre">
-      <div class="rv-home-media-badge">
-        <strong>Priya Wadhwani</strong>
-        <span>Founder • Yoga &amp; Holistic Wellness</span>
+  <section class="rv-home-section" style="padding-top:0">
+    <div class="rv-home-section-head">
+      <span class="rv-pill">A holistic approach</span>
+      <h2>Practices for body, mind and inner well-being.</h2>
+      <p>Explore a combination of guided practices and personalised support that can become part of your regular
+        wellness routine.</p>
+    </div>
+
+    <div class="rv-content-grid">
+      <article class="rv-content-card">
+        <span class="rv-section-number">01</span>
+        <h2>Yoga &amp; Pranayama</h2>
+        <p>Build a consistent practice through movement, breath awareness and mindful routines.</p>
+        <div class="rv-feature-list">
+          <div class="rv-feature">Regular Yoga Classes</div>
+          <div class="rv-feature">Pranayama Practice</div>
+        </div>
+      </article>
+      <article class="rv-content-card">
+        <span class="rv-section-number">02</span>
+        <h2>Healing &amp; Meditation</h2>
+        <p>Make space for reflection, emotional balance and personal well-being through guided healing practices.</p>
+        <div class="rv-feature-list">
+          <div class="rv-feature">Healing Sessions</div>
+          <div class="rv-feature">Meditation</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Updated Testimonials Section with Glassmorphic Slider -->
+  <section
+    class="relative w-full flex flex-col items-center justify-center py-20 text-black overflow-hidden ">
+
+    <!-- Radial Glow Background Effects -->
+    <div class="absolute inset-0 w-full h-full pointer-events-none z-0">
+      <div class="absolute top-[20%] right-0 w-[420px] h-[420px] bg-violet-500/10 rounded-full blur-[140px]"></div>
+      <div class="absolute bottom-0 left-0 w-[320px] h-[320px] bg-violet-500/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <!-- Header Content -->
+    <div class="relative z-10 text-center px-4">
+      <span class="rv-pill" style="background: rgba(139, 92, 246, 0.15); color: #c4b5fd;">Testimonials</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-violet-600 mt-3">Hear from people who connected with Revital</h2>
+      <p class="text-slate-400 mt-2 max-w-xl mx-auto">Read experiences shared by people who have transformed their
+        health and energy levels.</p>
+    </div>
+
+    <!-- Testimonial Slider Container -->
+    <div class="relative w-full max-w-4xl mx-auto px-4 mt-10 z-10">
+      <!-- Glassmorphic Card Box -->
+      <div
+        class="relative backdrop-blur-md bg-white/[0.04] border border-white/10 rounded-2xl shadow-2xl overflow-hidden p-8 md:p-12">
+
+        <!-- Top Glowing Border Line Accent -->
+        <div
+          class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-violet-700 to-transparent">
+        </div>
+
+        <!-- Dynamic Content Transition Wrapper -->
+        <div id="slider-content" class="flex flex-col gap-8 transition-opacity duration-300 opacity-100">
+
+          <!-- Top Meta Section (User Info & Counter) -->
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div class="flex items-center gap-4">
+              <!-- Initials Avatar Badge -->
+              <div id="client-avatar"
+                class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-violet-100 text-xl font-semibold text-white ">
+                RK
+              </div>
+              <div>
+                <p id="client-name" class="text-lg font-semibold text-violet-600">Rashmi Khatri</p>
+                <p id="client-role" class="text-sm text-gray-400">Yoga Student</p>
+              </div>
+            </div>
+
+            <!-- Slide Indicator Counter -->
+            <div id="slide-counter"
+              class="text-xs font-medium uppercase tracking-[0.35em] text-black sm:text-right">
+              01 / 06
+            </div>
+          </div>
+
+          <!-- Content Block Quote Box -->
+          <div
+            class="relative rounded-2xl border border-violet-500 bg-violet-900/[0.05] p-6 md:p-10 backdrop-blur-md">
+            <!-- Decorative Quote Icon Symbol -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="absolute top-6 left-6 h-10 w-10 text-violet-900" aria-hidden="true">
+              <path
+                d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+              </path>
+              <path
+                d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+              </path>
+            </svg>
+
+            <p id="quote-text"
+              class="relative z-10 pl-4 text-base md:text-lg text-black leading-relaxed font-light">
+              "My self Rashmi Khatri maine 4 months before revital yoga class join kiya tha .Class join karne se mujhe
+              bahut benifits hue hai jaise mera energy level improve huaa ,mere back me problem tha,hump nikala huaa tha
+              , sleep issues the . Kafi improve hua hai health me. Priya ma'am uske according mujhe guide karte hai.
+              Revital Yoga me mere favourite sessions hai -dance, meditation,chair yoga,bottle exercise overall good
+              experience mila hai Thank you Priya ma'am"
+            </p>
+          </div>
+        </div>
+
+        <!-- Carousel Control Buttons -->
+        <div class="relative z-20 mt-8 flex justify-end gap-3">
+          <button type="button" id="prev-testimonial-btn" aria-label="Previous testimonial"
+            class="inline-flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-violet-600 text-white transition duration-200 hover:bg-violet-700 active:scale-95">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <path d="m15 18-6-6 6-6"></path>
+            </svg>
+          </button>
+          <button type="button" id="next-testimonial-btn" aria-label="Next testimonial"
+            class="inline-flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-violet-600 text-white transition duration-200 hover:bg-violet-700 active:scale-95">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+        </div>
+
       </div>
     </div>
-  </div>
-</header>
+  </section>
 
-<section class="rv-home-section" id="founder">
-  <div class="rv-founder-card">
-    <div class="rv-founder-photo">
-      <img src="Priya Wadhwani.jpeg" alt="Priya Wadhwani — Founder of Revital Yoga and Healing Centre" loading="lazy">
-    </div>
-    <div class="rv-founder-copy">
-      <span class="rv-section-number">FOUNDER &amp; WELLNESS GUIDE</span>
-      <h2>Meet Priya Wadhwani</h2>
-      <h3>Founder, Revital Yoga and Healing Centre</h3>
-      <p>
-        I, Priya Wadhwani, am the founder of Revital Yoga and Healing Centre. My journey as a yoga instructor with this wellness centre began in January 2017. Over the years, I have gained deep and holistic experience with yoga, pranayama, meditation and their impact on everyday life.
-      </p>
-      <p>
-        In 2020, I began exploring deeper dimensions of holistic health through Reiki healing, Ho'oponopono, gratitude healing, EFT for emotional balance, Love Ponopono and various NLP-based techniques. These experiences helped me understand how closely our health, energy, relationships, wealth and career are connected.
-      </p>
-      <p>
-        I have always wanted to help people overcome the challenges they face. With the grace of God, thousands of people have connected with me and experienced meaningful changes in their health and energy levels. It is always a privilege to help you and bring value to your life.
-      </p>
-      <div class="rv-founder-actions">
-        <a class="rv-primary-btn" href="about.html">Read My Full Journey <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        <a class="rv-secondary-btn" data-calendly href="#">Let's Connect <i data-lucide="calendar-days" class="w-4 h-4"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="rv-home-section" style="padding-top:0">
-  <div class="rv-home-section-head">
-    <span class="rv-pill">A holistic approach</span>
-    <h2>Practices for body, mind and inner well-being.</h2>
-    <p>Explore a combination of guided practices and personalised support that can become part of your regular wellness routine.</p>
-  </div>
-
-  <div class="rv-content-grid">
-    <article class="rv-content-card">
-      <span class="rv-section-number">01</span>
-      <h2>Yoga &amp; Pranayama</h2>
-      <p>Build a consistent practice through movement, breath awareness and mindful routines.</p>
-      <div class="rv-feature-list">
-        <div class="rv-feature">Regular Yoga Classes</div>
-        <div class="rv-feature">Pranayama Practice</div>
-      </div>
-    </article>
-    <article class="rv-content-card">
-      <span class="rv-section-number">02</span>
-      <h2>Healing &amp; Meditation</h2>
-      <p>Make space for reflection, emotional balance and personal well-being through guided healing practices.</p>
-      <div class="rv-feature-list">
-        <div class="rv-feature">Healing Sessions</div>
-        <div class="rv-feature">Meditation</div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="rv-home-section rv-testimonials">
-  <div class="rv-home-section-head">
-    <span class="rv-pill">Testimonials</span>
-    <h2>Hear from people who connected with Revital.</h2>
-    <p>Watch the testimonial videos shared by people who have experienced the centre's practices and guidance.</p>
-  </div>
-
-  <div class="rv-video-grid">
-    <article class="rv-video-card">
-      <video controls preload="metadata" playsinline>
-        <source src="Video 1.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-      <div class="rv-video-card-body"><strong>Testimonial 01</strong><span>Listen to a personal experience with Revital Yoga and Healing Centre.</span></div>
-    </article>
-    <article class="rv-video-card">
-      <video controls preload="metadata" playsinline>
-        <source src="Video 2.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-      <div class="rv-video-card-body"><strong>Testimonial 02</strong><span>Hear how the centre's practices became part of a wellness journey.</span></div>
-    </article>
-    <article class="rv-video-card">
-      <video controls preload="metadata" playsinline>
-        <source src="Video 3.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-      <div class="rv-video-card-body"><strong>Testimonial 03</strong><span>A shared experience from the Revital community.</span></div>
-    </article>
-  </div>
-</section>
-
-<section class="rv-home-section">
-  <div class="rv-home-cta">
-    <h2>Ready to begin your journey?</h2>
-    <p>Explore the available programs, book a session or connect directly with Priya to discuss where you would like to begin.</p>
-    <div class="rv-hero-actions">
-      <a class="rv-secondary-btn" href="cources_payment.html">Explore Programs <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-      <a class="rv-secondary-btn" data-calendly href="#">Let's Connect <i data-lucide="calendar-days" class="w-4 h-4"></i></a>
-    </div>
-  </div>
-</section>
-
-<footer class="rv-footer">
-  <div class="rv-footer-inner">
-    <span>&copy; 2026 Revital Yoga and Healing Centre. All rights reserved.</span>
-    <div class="rv-footer-links">
-      <a href="about.html">About Us</a>
-      <a href="privecypolicy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="contactus.html">Contact Support</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  lucide.createIcons();
-
-  const btn = document.getElementById('rvMenuBtn');
-  const menu = document.getElementById('rvMobileMenu');
-  btn?.addEventListener('click', () => {
-    const open = menu.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    btn.innerHTML = open ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
-    lucide.createIcons();
-  });
-
-  // Replace this one value with the client's actual Calendly scheduling URL.
-  const CALENDLY_URL = 'https://calendly.com/revitalyoga75/new-meeting?month=2026-04'; // Replace with actual URL
-  document.querySelectorAll('[data-calendly]').forEach((link) => {
-    link.addEventListener('click', (event) => {
-      if (!CALENDLY_URL || CALENDLY_URL.includes('PASTE_CLIENT')) {
-        event.preventDefault();
-        alert('Calendly scheduling link will be available once the centre\'s Calendly URL is added.');
-        return;
+  <!-- REVIATAL YOGA FAQ SECTION -->
+  <section class="rv-home-section" id="faq">
+    <style>
+      /* FAQ Section Styles */
+      #faq.rv-home-section {
+        padding: 60px 16px;
       }
-      link.href = CALENDLY_URL;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
+  
+      .rv-faq-wrapper {
+        max-width: 800px;
+        margin: 40px auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+  
+      .rv-faq-card {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+  
+      .rv-faq-card.open {
+        border-color: #8b5cf6;
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+      }
+  
+      .rv-faq-button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 24px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        transition: background-color 0.2s ease;
+      }
+  
+      .rv-faq-button:hover {
+        background-color: rgba(139, 92, 246, 0.03);
+      }
+  
+      .rv-faq-question {
+        font-size: 16px;
+        font-weight: 600;
+        color: #1e293b;
+        margin: 0;
+        padding-right: 16px;
+      }
+  
+      .rv-faq-icon {
+        width: 20px;
+        height: 20px;
+        color: #7c3aed;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+      }
+  
+      .rv-faq-card.open .rv-faq-icon {
+        transform: rotate(180deg);
+      }
+  
+      .rv-faq-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease-in-out;
+      }
+  
+      .rv-faq-card.open .rv-faq-content {
+        grid-template-rows: 1fr;
+      }
+  
+      .rv-faq-inner {
+        overflow: hidden;
+      }
+  
+      .rv-faq-answer {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #64748b;
+        padding: 0 24px 20px 24px;
+        margin: 0;
+        border-top: 1px solid #f1f5f9;
+        padding-top: 16px;
+      }
+    </style>
+  
+  <div class="flex flex-row items-center justify-center gap-6 mt-16 w-full max-w-5xl mx-auto">
+    <div class="w-1/3 hover:-translate-y-0.5 transition duration-300">
+      <h3 class="text-base font-semibold text-slate-700 mb-2">Vibhuti Arora</h3>
+      <video class="rounded-xl w-full" alt="Autumn Leaf Harmony" src="Video 1.mp4" controls></video>
+    </div>
+    <div class="w-1/3 hover:-translate-y-0.5 transition duration-300">
+      <h3 class="text-base font-semibold text-slate-700 mb-2">Sakshi Gurubakshani</h3>
+      <video class="rounded-xl w-full" alt="Autumn Leaf Harmony" src="Video 3.mp4" controls></video>
+    </div>
+    <div class="w-1/3 hover:-translate-y-0.5 transition duration-300">
+      <h3 class="text-base font-semibold text-slate-700 mb-2">Usha Taneani</h3>
+      <video class="rounded-xl w-full" alt="Autumn Leaf Harmony" src="Video 2.mp4" controls></video>
+    </div>
+  </div>
+
+
+
+    <div class="rv-home-section-head" style="text-align: center;">
+      <span class="rv-pill"></span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Find answers to common questions about our yoga sessions, healing practices, and how to get started.</p>
+    </div>
+  
+    <div id="faqContainer" class="rv-faq-wrapper">
+      <!-- FAQ Items are populated dynamically by JavaScript below -->
+    </div>
+  
+    <script>
+      (function () {
+        const faqsData = [
+          {
+            question: 'What are the benefits of yoga and healing sessions?',
+            answer: 'Yoga and healing bring balance to the body, mind, and emotions. They can help reduce stress, anxiety, fatigue, sleep disorders, emotional blockages, and various lifestyle-related issues.'
+          },
+          {
+            question: 'Do I need prior experience to learn yoga?',
+            answer: 'No. All our yoga sessions are suitable for both beginners and experienced practitioners. Practice is tailored according to your capability and health condition.'
+          },
+          {
+            question: 'What is a healing session?',
+            answer: 'A healing session is a holistic process aimed at establishing balance across the body, mind, and energy levels, helping you feel calmer, more positive, and energized.'
+          },
+          {
+            question: 'Are online yoga and healing sessions available?',
+            answer: 'Yes, we offer both online and offline sessions so you can join according to your convenience.'
+          },
+          {
+            question: 'What is the duration of a session?',
+            answer: 'Yoga classes usually last 45 to 60 minutes. Healing sessions can range from 45 to 90 minutes depending on individual requirements.'
+          },
+          {
+            question: 'Does yoga help with weight loss?',
+            answer: 'Regular yoga practice, combined with proper breathing techniques and a healthy lifestyle, can support weight management. Results vary from person to person.'
+          },
+          {
+            question: 'Can senior citizens practice yoga?',
+            answer: 'Yes. Safe and gentle yoga exercises are conducted for senior citizens, tailored specifically to their physical condition.'
+          },
+          {
+            question: 'How many healing sessions should I take?',
+            answer: 'It depends on your personal needs and goals. Some people feel a positive shift in just one session, while others may require multiple sessions for better results.'
+          },
+          {
+            question: 'What should I bring to my first class?',
+            answer: 'For yoga, wear comfortable clothing, bring a yoga mat, a water bottle, a small towel, and come with an open mind. Please inform us beforehand if you have any medical conditions. For online healing sessions, ensure a stable internet connection and a quiet space free of distractions.'
+          },
+          {
+            question: 'How can I register for a yoga or healing session?',
+            answer: 'You can fill out the contact form on our website, send us a WhatsApp message, or call us directly to book your slot.'
+          },
+          {
+            question: 'Are yoga and healing a replacement for medical treatment?',
+            answer: 'Yoga and healing are complementary practices meant to support overall health and well-being. They are not a substitute for medical treatment, diagnosis, or prescription medication. Always consult your doctor for serious health conditions.'
+          }
+        ];
+
+        const faqContainer = document.getElementById('faqContainer');
+
+        if (faqContainer) {
+          faqContainer.innerHTML = faqsData.map((faq, index) => `
+            <div class="rv-faq-card" data-index="${index}">
+              <button type="button" class="rv-faq-button">
+                <h3 class="rv-faq-question">${faq.question}</h3>
+                <svg class="rv-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="rv-faq-content">
+                <div class="rv-faq-inner">
+                  <p class="rv-faq-answer">${faq.answer}</p>
+                </div>
+              </div>
+            </div>
+          `).join('');
+
+          faqContainer.querySelectorAll('.rv-faq-button').forEach((button) => {
+            button.addEventListener('click', () => {
+              const currentCard = button.parentElement;
+              const isOpen = currentCard.classList.contains('open');
+
+              faqContainer.querySelectorAll('.rv-faq-card').forEach((card) => {
+                card.classList.remove('open');
+              });
+
+              if (!isOpen) {
+                currentCard.classList.add('open');
+              }
+            });
+          });
+        }
+      })();
+    </script>
+  </section>
+
+  <footer class="rv-footer">
+    <div class="rv-footer-inner">
+      <span>&copy; 2026 Revital Yoga and Healing Centre. All rights reserved.</span>
+      <div class="rv-footer-links">
+        <a href="about.html">About Us</a>
+        <a href="privecypolicy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contactus.html">Contact Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    const btn = document.getElementById('rvMenuBtn');
+    const menu = document.getElementById('rvMobileMenu');
+    btn?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.innerHTML = open ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+      lucide.createIcons();
     });
-  });
-</script>
+
+    // Calendly URL integration
+    const CALENDLY_URL = 'https://calendly.com/revitalyoga75/new-meeting?month=2026-04';
+    document.querySelectorAll('[data-calendly]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        if (!CALENDLY_URL || CALENDLY_URL.includes('PASTE_CLIENT')) {
+          event.preventDefault();
+          alert('Calendly scheduling link will be available once the centre\'s Calendly URL is added.');
+          return;
+        }
+        link.href = CALENDLY_URL;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+      });
+    });
+
+    // Testimonial Carousel Script
+    const testimonials = [
+      {
+        avatar: 'RK',
+        name: 'Rashmi Khatri',
+        role: 'Yoga Student',
+        text: '"My self Rashmi Khatri maine 4 months before revital yoga class join kiya tha .Class join karne se mujhe bahut benifits hue hai jaise mera energy level improve huaa ,mere back me problem tha,hump nikala huaa tha , sleep issues the . Kafi improve hua hai health me. Priya ma\'am uske according mujhe guide karte hai. Revital Yoga me mere favourite sessions hai -dance, meditation,chair yoga,bottle exercise overall good experience mila hai Thank you Priya ma\'am"'
+      },
+      {
+        avatar: 'SV',
+        name: 'Shivani Vishwakarma',
+        role: 'Yoga & Wellness Member',
+        text: '"Mai shivani vishwakarma mujhe 15 din ho raha hai Revital yoga ko join kiye huye. Or mujhe in 15 dino me hi kafi energetic mahasus ho raha hai, mujhe sciatica ka problem hai abhi se mujhe kafi aaram mila hai Revital yoga me mujhe sare activitys achhe lagte hai or priya mam bhi bahut achhe se guide karti hai Thank you priya maam "'
+      },
+      {
+        avatar: 'AS',
+        name: 'Anita Sahu',
+        role: 'Pranayama Student',
+        text: '"My self Anita Sahu Mujhe revital yoga classes join kare hue 4 months hue hain Yoga karne se pahle din bhar thakan mahsus hoti thi aur ab yoga karne per kafi aaram mil raha hai, din bhar energetic and light feel hota hai. Mujhe sciatica ka problem tha , yoga karne per abhi aaram hua Hai Thank you so much"'
+      },
+      {
+        avatar: 'ST',
+        name: 'Sushma Tolwani',
+        role: 'Holistic Wellness Member',
+        text: '"I wanted to share my wonderful experience with the Revital Healing Club. The sessions provided me with much-needed peace of mind.​The knowledge of Reiki therapy and Yoga I gained there has truly transformed my life. Additionally, the guidance on diet and daily routine was incredibly helpful.​I am deeply grateful for everything. Thank you so much! Warm regards."'
+      },
+
+      {
+        avatar: 'MP',
+        name: 'Manju Puri',
+        role: 'Holistic Wellness Member',
+        text: '"Hariom mera naam manju puri hai. Maine yoga class join ki thi apni health improve karne aur thoda peace paane ke liye. Priya Bhabhi ke saath yoga karte hue bahut accha feel hota hai, unka way of teaching bahut simple aur comfortable hai. Yoga join karne ke baad meri body zyada flexible aur active ho gayi hai, aur main mentally bhi zyada calm aur relaxed feel karti hoon. Healing classes ne bhi mujhe andar se shanti aur positive energy di hai. Mujhe bahut accha lagta hai ki main is journey ka part hoon. Thank you Priya bhabhi"'
+      },
+     {
+        avatar: 'RL',
+        name: 'Ritika Lulla',
+        role: 'Holistic Wellness Member',
+        text: '"In Revital yoga I join 2020...that time I dont know anything about yoga.. meditation pranyam..but joining the classes and learn so many thing from basic to advanced...mam teach me each posture in easyway and also giving tips of dieting and detox body ....after yoga journey.. last year I learn healing .these was amazing experience... priya mam inspired me alot....she help me to connect to the soul... Thank you so much mam ...always inspire me best journey with Revital yoga"'
+      }
+
+
+    ];
+
+    let currentIndex = 0;
+
+    function updateTestimonial(index) {
+      const content = document.getElementById('slider-content');
+      content.classList.add('opacity-0');
+
+      setTimeout(() => {
+        const data = testimonials[index];
+        document.getElementById('client-avatar').textContent = data.avatar;
+        document.getElementById('client-name').textContent = data.name;
+        document.getElementById('client-role').textContent = data.role;
+        document.getElementById('quote-text').textContent = data.text;
+        document.getElementById('slide-counter').textContent = `${String(index + 1).padStart(2, '0')} / ${String(testimonials.length).padStart(2, '0')}`;
+        content.classList.remove('opacity-0');
+      }, 300);
+    }
+
+    document.getElementById('prev-testimonial-btn')?.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+      updateTestimonial(currentIndex);
+    });
+
+    document.getElementById('next-testimonial-btn')?.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      updateTestimonial(currentIndex);
+    });
+  </script>
 </body>
+
 </html>
